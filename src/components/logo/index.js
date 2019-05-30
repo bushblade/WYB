@@ -7,31 +7,27 @@ import treeRight from './treeRight'
 export default function Logo() {
   const seedSpring = useSpring({
     opacity: 1,
-    config: config.molasses,
-    delay: 200,
+    config: { duration: 1500 },
     from: { opacity: 0 },
   })
   const BGspring = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    config: config.molasses,
+    config: { duration: 1500 },
+    delay: 300,
   })
 
-  const treeLeftTrail = useTrail(treeLeft.length, {
+  const treeConfig = {
     opacity: 1,
     strokeDashoffset: 0,
     from: { strokeDashoffset: 100, strokeDasharray: 100, opacity: 0 },
     config: config.slow,
-    delay: 400,
-  })
+    delay: 500,
+  }
 
-  const treeRightTrail = useTrail(treeRight.length, {
-    opacity: 1,
-    strokeDashoffset: 0,
-    from: { strokeDashoffset: 100, strokeDasharray: 100, opacity: 0 },
-    config: config.slow,
-    delay: 400,
-  })
+  const treeLeftTrail = useTrail(treeLeft.length, treeConfig)
+
+  const treeRightTrail = useTrail(treeRight.length, treeConfig)
 
   return (
     <svg
