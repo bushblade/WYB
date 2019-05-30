@@ -7,14 +7,15 @@ import treeRight from './treeRight'
 export default function Logo() {
   const seedSpring = useSpring({
     opacity: 1,
-    config: { duration: 1500 },
+    config: { duration: 1800 },
     from: { opacity: 0 },
+    delay: 500,
   })
   const BGspring = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    config: { duration: 1500 },
-    delay: 300,
+    config: { duration: 2500 },
+    delay: 800,
   })
 
   const treeConfig = {
@@ -22,7 +23,7 @@ export default function Logo() {
     strokeDashoffset: 0,
     from: { strokeDashoffset: 100, strokeDasharray: 100, opacity: 0 },
     config: config.slow,
-    delay: 500,
+    delay: 800,
   }
 
   const treeLeftTrail = useTrail(treeLeft.length, treeConfig)
