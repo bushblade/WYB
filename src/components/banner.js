@@ -1,17 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import BackgroundImage from 'gatsby-background-image'
 
 import Logo from './logo'
-
-const Container = styled.header`
-  min-height: 100vh;
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  width: 100%;
-`
 
 const Title = styled.h1`
   font-family: 'Quintessential';
@@ -41,28 +33,24 @@ const Banner = () => {
       mainImage: file(relativePath: { eq: "sunrise-background01.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1920, quality: 75, grayscale: true) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
     }
   `)
   return (
-    <Container>
-      <BannerWrapper>
-        <Img
-          fluid={data.mainImage.childImageSharp.fluid}
-          alt="sunrise"
-          style={{ objectFit: 'cover' }}
-        />
-      </BannerWrapper>
-      <div>
-        <SVGwrapper>
-          <Logo />
-        </SVGwrapper>
-        <Title>{data.site.siteMetadata.title}</Title>
-      </div>
-    </Container>
+    <BackgroundImage
+      Tag="section"
+      fluid={data.mainImage.childImageSharp.fluid}
+      backgroundColor="lightgray"
+      style={{ minHeight: '100vh' }}
+    >
+      <SVGwrapper>
+        <Logo />
+      </SVGwrapper>
+      <Title>{data.site.siteMetadata.title}</Title>
+    </BackgroundImage>
   )
 }
 
