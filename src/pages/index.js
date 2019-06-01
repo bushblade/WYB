@@ -19,7 +19,9 @@ const About = styled.div`
   p {
     font-size: 1.6rem;
   }
-  a {
+  a,
+  span {
+    cursor: pointer;
     text-decoration: none;
     font-weight: 500;
     box-shadow: inset 0 -0.175em rgba(239, 239, 239, 0.7),
@@ -59,6 +61,7 @@ const IndexPage = () => {
       }
     }
   `)
+  const contactRef = React.createRef()
   return (
     <Layout>
       <SEO title={title} />
@@ -91,8 +94,15 @@ const IndexPage = () => {
               online community
             </a>
             , <a href="mailto:westyorkshirebushcraftgroup@gmail.com">email</a>{' '}
-            us or fill in the <a href="#/contact">contact form</a> at the bottom
-            of the page.
+            us or fill in the{' '}
+            <span
+              onClick={() => {
+                contactRef.current.scrollIntoView({ behavior: 'smooth' })
+              }}
+            >
+              contact form
+            </span>{' '}
+            at the bottom of the page.
           </p>
           <p>
             Members Galleries The images in the galleries have been taken by our
@@ -101,6 +111,10 @@ const IndexPage = () => {
             a look.
           </p>
         </About>
+      </Section>
+      <Section>Maybe a gallery</Section>
+      <Section id="contact" ref={contactRef}>
+        Maybe contact or footer....
       </Section>
     </Layout>
   )
