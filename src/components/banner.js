@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Logo from './logo'
+import { DownButton } from './styled'
 
 const Container = styled.header`
   height: 100vh;
@@ -12,7 +13,7 @@ const Container = styled.header`
   h1 {
     font-family: 'Quintessential';
     font-weight: 400;
-    margin: 0;
+    margin: 0 0 2.5rem 0;
     padding: 0;
     font-size: 4rem;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.35);
@@ -35,7 +36,8 @@ const LogoWrapper = styled.div`
   }
 `
 
-const Banner = ({ title }) => {
+const Banner = ({ title, aboutRef }) => {
+  console.log(aboutRef)
   return (
     <Container>
       <div>
@@ -43,6 +45,11 @@ const Banner = ({ title }) => {
           <Logo />
         </LogoWrapper>
         <h1>{title}</h1>
+        <DownButton
+          onClick={() =>
+            aboutRef.current.scrollIntoView({ behavior: 'smooth' })
+          }
+        />
       </div>
     </Container>
   )
