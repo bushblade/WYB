@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -7,5 +7,14 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     background: lightslategray;
-  }
+    overflow: hidden;
+    
+  } 
+  
+`
+
+export const Section = styled.section`
+  min-height: 100vh;
+  background-color: ${props => props.bgcolor};
+  scroll-snap-align: start;
 `

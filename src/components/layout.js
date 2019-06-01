@@ -2,8 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
+import styled from 'styled-components'
 
 import { GlobalStyle } from './styled'
+
+const Container = styled.div`
+  scroll-snap-type: y proximity;
+  height: 100vh;
+  overflow: auto;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -18,20 +25,18 @@ const Layout = ({ children }) => {
     }
   `)
   return (
-    <div>
+    <>
       <GlobalStyle />
       <BackgroundImage
         Tag="section"
         fluid={data.mainImage.childImageSharp.fluid}
         backgroundColor="lightgray"
         fadeIn="soft"
-        style={{
-          minHeight: '100vh',
-        }}
+        style={{ overflow: 'hidden' }}
       >
-        {children}
+        <Container>{children}</Container>
       </BackgroundImage>
-    </div>
+    </>
   )
 }
 

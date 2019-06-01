@@ -8,6 +8,7 @@ const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
+  scroll-snap-align: start;
   h1 {
     font-family: 'Quintessential';
     font-weight: 400;
@@ -16,12 +17,22 @@ const Container = styled.header`
     font-size: 4rem;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.35);
     text-align: center;
+    @media (max-width: 800px) {
+      font-size: 3rem;
+    }
   }
 `
 
 const LogoWrapper = styled.div`
   display: flex;
   justify-content: center;
+  margin: auto;
+  @media (max-width: 800px) {
+    svg {
+      width: 50%;
+      height: 50%;
+    }
+  }
 `
 
 const Banner = ({ title }) => {
