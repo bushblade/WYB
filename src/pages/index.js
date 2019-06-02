@@ -9,6 +9,7 @@ import { Section } from '../components/styled'
 import About from '../components/About'
 
 const IndexPage = () => {
+  console.log(process.env.MY_SECRET_VAR)
   const {
     site: {
       siteMetadata: { title },
