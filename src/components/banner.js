@@ -37,7 +37,6 @@ const LogoWrapper = styled.div`
 `
 
 const Banner = ({ title, aboutRef }) => {
-  console.log(aboutRef)
   return (
     <Container>
       <div>
