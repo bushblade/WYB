@@ -8,6 +8,7 @@ import Banner from '../components/banner'
 import { Section, TwoColumnContainer, colours } from '../components/styled'
 import About from '../components/About'
 import ContactForm from '../components/contactform'
+import Galleries from '../components/Galleries'
 
 const scrollTo = ref => () => ref.current.scrollIntoView({ behavior: 'smooth' })
 
@@ -40,20 +41,10 @@ const IndexPage = () => {
         />
       </Section>
       <Section ref={galleryRef} bgcolor={colours.lowOpacityWhite}>
-        Maybe a gallery
+        <Galleries />
       </Section>
       <Section ref={contactRef} bgcolor={colours.lowOpacityLightGrey}>
-        <TwoColumnContainer>
-          <ContactForm />
-          <div style={{ textAlign: 'center' }}>
-            social links
-            <ul>
-              <li>Facebook</li>
-              <li>YouTube</li>
-              <li>Email</li>
-            </ul>
-          </div>
-        </TwoColumnContainer>
+        <ContactForm />
       </Section>
     </Layout>
   )

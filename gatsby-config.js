@@ -32,7 +32,8 @@ module.exports = {
       options: {
         fonts: [
           `Quintessential`,
-          `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
+          `source sans pro\:300,400,400i,700`,
+          `Lora\:400i`, // you can also specify font weights and styles
         ],
       },
     },

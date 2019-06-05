@@ -17,10 +17,14 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }   
   body {
-    font-family: 'Quintessential', cursive;
+    /* font-family: 'Quintessential', cursive; */
+    font-family: 'Lora', serif;
     margin: 0;
     background: lightslategray;    
   }   
+  h2 {
+    font-family: 'Quintessential', cursive;
+  }
 `
 
 export const Section = styled.section`

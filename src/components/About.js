@@ -34,12 +34,6 @@ const About = ({ scrollToContact, className, scrollToGallery }) => {
         fill in the <span onClick={scrollToContact}>contact form</span> at the
         bottom of the page.
       </p>
-      {/* <p>
-        Members Galleries The images in the galleries have been taken by our
-        members while in attendance of meets, they are usually updated after
-        each meet so if you're interested in what we get up to, please have a
-        look.
-      </p> */}
     </div>
   )
 }
@@ -53,7 +47,7 @@ export default styled(About)`
     font-size: 2rem;
   }
   p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
   a,
   span {

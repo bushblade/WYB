@@ -12,10 +12,9 @@ export const Field = styled.div`
   }
   input,
   textarea {
-    /* padding: 0 2rem; */
     padding: calc(0.375em - 1px) calc(0.625em - 1px);
     height: 2.25em;
-    font-family: 'Quintessential', cursive;
+    font-family: 'Lora', cursive;
     font-size: 1.3rem;
     line-height: 1.5;
     outline: none;
@@ -49,7 +48,11 @@ export const Field = styled.div`
   }
 `
 
-export const Form = styled.form``
+export const Form = styled.form`
+  max-width: 800px;
+  margin: auto;
+  padding: 3rem 0;
+`
 
 export const BtnField = styled.div`
   margin-top: 1rem;
