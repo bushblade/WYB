@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import Button from './Button'
-import { Field, BtnField } from './styled'
+import { Field, BtnField, Form } from './styled'
 
 const encode = data => {
   return Object.keys(data)
@@ -9,6 +9,10 @@ const encode = data => {
     .join('&')
 }
 
+const CheckValid = (...fields) =>
+  fields.every(({ text, regex }) => regex.test(text))
+
+// Component
 const ContactForm = ({ setMessageSent }) => {
   const [name, setName] = useState({
     text: '',
@@ -18,7 +22,6 @@ const ContactForm = ({ setMessageSent }) => {
   const [email, setEmail] = useState({
     text: '',
     valid: false,
-    // eslint-disable-next-line
     regex: /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/,
   })
   const [message, setMessage] = useState({
@@ -27,11 +30,8 @@ const ContactForm = ({ setMessageSent }) => {
     regex: /\S/,
   })
 
-  const CheckValid = () =>
-    [name, email, message].every(({ text, regex }) => regex.test(text))
-
   const handleSubmit = e => {
-    if (CheckValid()) {
+    if (CheckValid(name, email, message)) {
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -54,7 +54,6 @@ const ContactForm = ({ setMessageSent }) => {
         })
         .catch(error => alert(error))
     }
-
     e.preventDefault()
   }
 
@@ -64,20 +63,20 @@ const ContactForm = ({ setMessageSent }) => {
     setMessage({ ...message, text: '' })
   }
 
-  const handleChange = (value, field, set) => {
-    field.regex.test(value)
-      ? set({ ...field, valid: true, text: value })
-      : set({ ...field, valid: false, text: value })
+  const handleChange = (state, setState) => ({ target: { value } }) => {
+    state.regex.test(value)
+      ? setState({ ...state, valid: true, text: value })
+      : setState({ ...state, valid: false, text: value })
   }
 
   return (
-    <form
+    <Form
       onSubmit={handleSubmit}
       data-netlify="true"
       name="contact"
       method="post"
     >
-      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="Form-name" value="contact" />
       <Field valid={name.valid} length={name.text.length}>
         <label>Your Name: </label>
         <input
@@ -85,9 +84,7 @@ const ContactForm = ({ setMessageSent }) => {
           name="name"
           value={name.text}
           placeholder="Your Name"
-          onChange={({ target: { value } }) =>
-            handleChange(value, name, setName)
-          }
+          onChange={handleChange(name, setName)}
         />
       </Field>
       <Field valid={email.valid} length={email.text.length}>
@@ -97,9 +94,7 @@ const ContactForm = ({ setMessageSent }) => {
           name="email"
           value={email.text}
           placeholder="you@youremail.com"
-          onChange={({ target: { value } }) =>
-            handleChange(value, email, setEmail)
-          }
+          onChange={handleChange(email, setEmail)}
         />
       </Field>
       <Field valid={message.valid} length={message.text.length}>
@@ -108,18 +103,16 @@ const ContactForm = ({ setMessageSent }) => {
           name="message"
           value={message.text}
           placeholder="What do you want to say?"
-          onChange={({ target: { value } }) =>
-            handleChange(value, message, setMessage)
-          }
+          onChange={handleChange(message, setMessage)}
         />
       </Field>
       <BtnField>
-        <Button type="submit" disabled={!CheckValid()}>
+        <Button type="submit" disabled={!CheckValid(name, email, message)}>
           Send Message
         </Button>
         <Button onClick={clearForm}>Clear Form</Button>
       </BtnField>
-    </form>
+    </Form>
   )
 }
 

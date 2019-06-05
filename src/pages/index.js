@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Banner from '../components/banner'
-import { Section } from '../components/styled'
+import { Section, TwoColumnContainer, colours } from '../components/styled'
 import About from '../components/About'
 import ContactForm from '../components/contactform'
 
@@ -25,17 +25,30 @@ const IndexPage = () => {
   `)
   const contactRef = useRef(null)
   const aboutRef = useRef(null)
+  const galleryRef = useRef(null)
 
   return (
     <Layout>
       <SEO title={title} />
       <Banner title={title} aboutRef={aboutRef} />
-      <Section bgcolor="rgba(239, 239, 239, 0.7)" ref={aboutRef}>
+      <Section bgcolor={colours.lowOpacityWhite} ref={aboutRef}>
         <About contactRef={contactRef} />
       </Section>
-      <Section>Maybe a gallery</Section>
-      <Section ref={contactRef}>
-        <ContactForm />
+      <Section ref={galleryRef} bgcolor={colours.lowOpacityWhite}>
+        Maybe a gallery
+      </Section>
+      <Section ref={contactRef} bgcolor={colours.lowOpacityLightGrey}>
+        <TwoColumnContainer>
+          <ContactForm />
+          <div style={{ textAlign: 'center' }}>
+            social links
+            <ul>
+              <li>Facebook</li>
+              <li>YouTube</li>
+              <li>Email</li>
+            </ul>
+          </div>
+        </TwoColumnContainer>
       </Section>
     </Layout>
   )

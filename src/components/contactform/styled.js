@@ -1,28 +1,35 @@
 import styled from 'styled-components'
 
+import { colours } from '../styled'
+
 export const Field = styled.div`
   margin: 0 auto;
   label {
     display: block;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 0.5em;
+    margin: 0.5em;
   }
   input,
   textarea {
-    outline: none;
-    padding: 0 2rem;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    font-size: 1rem;
-    height: 2.25em;
-    line-height: 1.5;
+    /* padding: 0 2rem; */
     padding: calc(0.375em - 1px) calc(0.625em - 1px);
-    background-color: whitesmoke;
+    height: 2.25em;
+    font-family: 'Quintessential', cursive;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    outline: none;
+    background-color: ${colours.lowOpacityWhite};
+    border: 0.15rem solid ${colours.darkGrey};
+    border-radius: 0.5rem;
     border-color: ${({ length, valid }) =>
-      length === 0 ? '#dbdbdb' : valid ? 'rgb(60, 179, 113)' : '#a94442'};
+      length === 0
+        ? colours.darkGrey
+        : valid
+        ? colours.lowOpacityGreen
+        : '#a94442'};
     color: #363636;
-    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+    box-shadow: inset 0 1px 5px rgba(10, 10, 10, 0.5);
     :focus,
     :active {
       outline: none;
@@ -31,7 +38,7 @@ export const Field = styled.div`
           length === 0
             ? 'rgba(10, 10, 10, 0.1)'
             : valid
-            ? 'rgba(60, 179, 113, 0.5)'
+            ? colours.green
             : 'rgba(169, 68, 66, 0.5)'};
     }
     width: 100%;
@@ -42,9 +49,14 @@ export const Field = styled.div`
   }
 `
 
+export const Form = styled.form``
+
 export const BtnField = styled.div`
+  margin-top: 1rem;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   @media (max-width: 780px) {
     justify-content: space-around;
   }

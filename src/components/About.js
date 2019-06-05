@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { colours } from './styled'
+
 const About = ({ contactRef, className }) => {
   return (
     <div className={className}>
@@ -39,12 +41,12 @@ const About = ({ contactRef, className }) => {
         </span>{' '}
         at the bottom of the page.
       </p>
-      <p>
+      {/* <p>
         Members Galleries The images in the galleries have been taken by our
         members while in attendance of meets, they are usually updated after
         each meet so if you're interested in what we get up to, please have a
         look.
-      </p>
+      </p> */}
     </div>
   )
 }
@@ -53,8 +55,7 @@ export default styled(About)`
   max-width: 960px;
   margin: auto;
   padding: 3rem 0;
-  color: #404040;
-  font-family: 'Quintessential';
+  color: ${colours.darkGrey};
   h2 {
     font-size: 2rem;
   }
@@ -66,8 +67,8 @@ export default styled(About)`
     cursor: pointer;
     text-decoration: none;
     font-weight: 500;
-    box-shadow: inset 0 -0.175em rgba(239, 239, 239, 0.7),
-      inset 0 -0.25em #555555;
+    box-shadow: inset 0 -0.175em ${colours.lowOpacityWhite},
+      inset 0 -0.25em ${colours.lightGrey};
     background: linear-gradient(
       0deg,
       rgba(238, 238, 238, 0) 0%,
@@ -81,7 +82,7 @@ export default styled(About)`
     :hover {
       background: linear-gradient(
         0deg,
-        rgba(238, 238, 238, 0.8) 0%,
+        rgba(238, 238, 238, 0.7) 0%,
         rgba(238, 238, 238, 0.2) 49%,
         rgba(238, 238, 238, 0) 100%
       );

@@ -1,12 +1,25 @@
 import styled, { createGlobalStyle, keyframes } from 'styled-components'
 
+export const colours = {
+  kahki: '#decd87',
+  lowOpacityKahki: 'rgba(222, 205, 135, 0.5)',
+  green: '#668000',
+  lowOpacityGreen: 'rgba(102, 128, 0, 0.5)',
+  darkGrey: '#404040',
+  lowOpacityDarkGrey: 'rgba(64, 64, 64, 0.9)',
+  lightGrey: '#555555',
+  lowOpacityLightGrey: 'rgba(85, 85, 85, 0.9)',
+  lowOpacityWhite: 'rgba(239, 239, 239, 0.7)',
+}
+
 export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }   
   body {
+    font-family: 'Quintessential', cursive;
     margin: 0;
-    background: lightslategray;
+    background: lightslategray;    
   }   
 `
 
@@ -18,45 +31,7 @@ export const Section = styled.section`
     padding: 0 1rem;
   }
 `
-export const About = styled.div`
-  max-width: 960px;
-  margin: auto;
-  padding: 3rem 0;
-  color: #404040;
-  font-family: 'Quintessential';
-  h2 {
-    font-size: 2rem;
-  }
-  p {
-    font-size: 1.6rem;
-  }
-  a,
-  span {
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: 500;
-    box-shadow: inset 0 -0.175em rgba(239, 239, 239, 0.7),
-      inset 0 -0.25em #555555;
-    background: linear-gradient(
-      0deg,
-      rgba(238, 238, 238, 0) 0%,
-      rgba(238, 238, 238, 0) 49%,
-      rgba(238, 238, 238, 0) 100%
-    );
-    :active,
-    :visited {
-      color: #404040;
-    }
-    :hover {
-      background: linear-gradient(
-        0deg,
-        rgba(238, 238, 238, 0.8) 0%,
-        rgba(238, 238, 238, 0.2) 49%,
-        rgba(238, 238, 238, 0) 100%
-      );
-    }
-  }
-`
+
 const btnAnimation = keyframes`
   0% {
     transform: translate(0, 0) rotate(45deg);
@@ -84,9 +59,10 @@ export const DownButton = styled.button`
   border-radius: 1.5rem;
   outline: none;
   cursor: pointer;
-  transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
   :hover {
-    box-shadow: 0 0 0.2rem 0.4rem rgba(239, 239, 239, 0.1);
+    box-shadow: 0 0 0.1rem 0.3rem ${colours.lowOpacityGreen};
+    background: ${colours.lowOpacityKahki};
   }
   :before {
     position: absolute;
@@ -102,5 +78,16 @@ export const DownButton = styled.button`
     transform: rotate(45deg);
     animation: ${btnAnimation} 2s infinite;
     box-sizing: border-box;
+  }
+`
+
+export const TwoColumnContainer = styled.div`
+  max-width: 960px;
+  margin: auto;
+  display: grid;
+  padding: 3rem 0;
+  grid-template-columns: 1fr;
+  @media (min-width: 800px) {
+    grid-template-columns: 2fr 1fr;
   }
 `
