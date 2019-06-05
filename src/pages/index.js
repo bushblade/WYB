@@ -7,9 +7,9 @@ import SEO from '../components/seo'
 import Banner from '../components/banner'
 import { Section } from '../components/styled'
 import About from '../components/About'
+import ContactForm from '../components/contactform'
 
 const IndexPage = () => {
-  console.log(process.env.MY_SECRET_VAR)
   const {
     site: {
       siteMetadata: { title },
@@ -34,7 +34,9 @@ const IndexPage = () => {
         <About contactRef={contactRef} />
       </Section>
       <Section>Maybe a gallery</Section>
-      <Section ref={contactRef}>Maybe contact or footer....</Section>
+      <Section ref={contactRef}>
+        <ContactForm />
+      </Section>
     </Layout>
   )
 }
