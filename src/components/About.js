@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { colours, DownButton } from './styled'
+import { colours } from './styled'
 
 const About = ({ scrollToContact, className, scrollToGallery }) => {
   return (
@@ -40,7 +40,6 @@ const About = ({ scrollToContact, className, scrollToGallery }) => {
         each meet so if you're interested in what we get up to, please have a
         look.
       </p> */}
-      <DownButton onClick={scrollToGallery} />
     </div>
   )
 }
