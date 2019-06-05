@@ -36,7 +36,7 @@ const LogoWrapper = styled.div`
   }
 `
 
-const Banner = ({ title, aboutRef }) => {
+const Banner = ({ title, scrollToAbout }) => {
   return (
     <Container>
       <div>
@@ -44,11 +44,7 @@ const Banner = ({ title, aboutRef }) => {
           <Logo />
         </LogoWrapper>
         <h1>{title}</h1>
-        <DownButton
-          onClick={() =>
-            aboutRef.current.scrollIntoView({ behavior: 'smooth' })
-          }
-        />
+        <DownButton onClick={scrollToAbout} />
       </div>
     </Container>
   )

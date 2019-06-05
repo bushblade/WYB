@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { colours } from './styled'
+import { colours, DownButton } from './styled'
 
-const About = ({ contactRef, className }) => {
+const About = ({ scrollToContact, className, scrollToGallery }) => {
   return (
     <div className={className}>
       <h2>Established in June of 2012</h2>
@@ -31,15 +31,8 @@ const About = ({ contactRef, className }) => {
           online community
         </a>
         , <a href="mailto:westyorkshirebushcraftgroup@gmail.com">email</a> us or
-        fill in the{' '}
-        <span
-          onClick={() => {
-            contactRef.current.scrollIntoView({ behavior: 'smooth' })
-          }}
-        >
-          contact form
-        </span>{' '}
-        at the bottom of the page.
+        fill in the <span onClick={scrollToContact}>contact form</span> at the
+        bottom of the page.
       </p>
       {/* <p>
         Members Galleries The images in the galleries have been taken by our
@@ -47,6 +40,7 @@ const About = ({ contactRef, className }) => {
         each meet so if you're interested in what we get up to, please have a
         look.
       </p> */}
+      <DownButton onClick={scrollToGallery} />
     </div>
   )
 }

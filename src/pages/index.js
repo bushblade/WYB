@@ -9,6 +9,8 @@ import { Section, TwoColumnContainer, colours } from '../components/styled'
 import About from '../components/About'
 import ContactForm from '../components/contactform'
 
+const scrollTo = ref => () => ref.current.scrollIntoView({ behavior: 'smooth' })
+
 const IndexPage = () => {
   const {
     site: {
@@ -30,9 +32,12 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title={title} />
-      <Banner title={title} aboutRef={aboutRef} />
+      <Banner title={title} scrollToAbout={scrollTo(aboutRef)} />
       <Section bgcolor={colours.lowOpacityWhite} ref={aboutRef}>
-        <About contactRef={contactRef} />
+        <About
+          scrollToContact={scrollTo(contactRef)}
+          scrollToGallery={scrollTo(galleryRef)}
+        />
       </Section>
       <Section ref={galleryRef} bgcolor={colours.lowOpacityWhite}>
         Maybe a gallery
