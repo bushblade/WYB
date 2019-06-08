@@ -13,7 +13,8 @@ const CheckValid = (...fields) =>
   fields.every(({ text, regex }) => regex.test(text))
 
 // Component
-const ContactForm = ({ setMessageSent }) => {
+const ContactForm = () => {
+  const [sent, setSent] = useState(false)
   const [name, setName] = useState({
     text: '',
     valid: false,
@@ -22,6 +23,7 @@ const ContactForm = ({ setMessageSent }) => {
   const [email, setEmail] = useState({
     text: '',
     valid: false,
+    // eslint-disable-next-line
     regex: /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/,
   })
   const [message, setMessage] = useState({
@@ -45,7 +47,7 @@ const ContactForm = ({ setMessageSent }) => {
         .then(res => {
           if (res.ok) {
             clearForm()
-            // setMessageSent(true)
+            setSent(true)
           } else {
             throw Error(
               'something went horribly wrong! Your message was not sent!'
@@ -64,9 +66,7 @@ const ContactForm = ({ setMessageSent }) => {
   }
 
   const handleChange = (state, setState) => ({ target: { value } }) => {
-    state.regex.test(value)
-      ? setState({ ...state, valid: true, text: value })
-      : setState({ ...state, valid: false, text: value })
+    setState({ ...state, valid: state.regex.test(value), text: value })
   }
 
   return (
