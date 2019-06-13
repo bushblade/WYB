@@ -86,12 +86,13 @@ export const DownButton = styled.button`
 `
 
 export const TwoColumnContainer = styled.div`
-  max-width: 960px;
+  max-width: 1440px;
   margin: auto;
   display: grid;
   padding: 3rem 0;
   grid-template-columns: 1fr;
+  grid-gap: 2rem;
   @media (min-width: 800px) {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 `
