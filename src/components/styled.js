@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, keyframes } from 'styled-components'
+import styled, { createGlobalStyle, keyframes, css } from 'styled-components'
 
 export const colours = {
   kahki: '#decd87',
@@ -90,9 +90,16 @@ export const TwoColumnContainer = styled.div`
   margin: auto;
   display: grid;
   padding: 3rem 0;
-  grid-template-columns: 1fr;
+  ${props =>
+    props.reverseMobile
+      ? css`
+          grid-template-areas: 'right' 'left';
+        `
+      : css`
+          grid-template-areas: 'left' 'right';
+        `}
   grid-gap: 2rem;
   @media (min-width: 800px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'left left' 'right right';
   }
 `
