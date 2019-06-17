@@ -5,10 +5,11 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Banner from '../components/banner'
-import { Section, TwoColumnContainer, colours } from '../components/styled'
+import { Section, colours } from '../components/styled'
 import About from '../components/About'
 import ContactForm from '../components/contactform'
-import Galleries from '../components/Galleries'
+// import Galleries from '../components/Galleries'
+import Poem from '../components/Poem'
 
 const scrollTo = ref => () => ref.current.scrollIntoView({ behavior: 'smooth' })
 
@@ -41,7 +42,7 @@ const IndexPage = () => {
         />
       </Section>
       <Section ref={galleryRef} bgcolor={colours.lowOpacityWhite}>
-        <Galleries />
+        <Poem />
       </Section>
       <Section ref={contactRef} bgcolor={colours.lowOpacityLightGrey}>
         <ContactForm />

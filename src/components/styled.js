@@ -59,7 +59,7 @@ export const DownButton = styled.button`
   margin: auto;
   padding: 2rem 1rem;
   background: transparent;
-  border: 0.2rem solid black;
+  border: 0.2rem solid ${props => (props.color ? props.color : 'black')};
   border-radius: 1.5rem;
   outline: none;
   cursor: pointer;
@@ -76,7 +76,7 @@ export const DownButton = styled.button`
     width: 1rem;
     height: 1rem;
     margin-left: -0.5rem;
-    border: 0.2rem solid black;
+    border: 0.2rem solid ${props => (props.color ? props.color : 'black')};
     border-top: transparent;
     border-left: transparent;
     transform: rotate(45deg);
@@ -90,6 +90,7 @@ export const TwoColumnContainer = styled.div`
   margin: auto;
   display: grid;
   padding: 3rem 0;
+  grid-template-columns: 1fr;
   ${props =>
     props.reverseMobile
       ? css`
@@ -100,6 +101,18 @@ export const TwoColumnContainer = styled.div`
         `}
   grid-gap: 2rem;
   @media (min-width: 800px) {
-    grid-template-areas: 'left left' 'right right';
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'left right';
   }
+`
+export const Cell = styled.div`
+  grid-area: ${props => props.area};
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+export const Quote = styled.blockquote`
+  font-size: 2rem;
+  text-align: center;
 `

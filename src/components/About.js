@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { colours } from './styled'
+import { colours, DownButton } from './styled'
 
 const About = ({ scrollToContact, className, scrollToGallery }) => {
   return (
@@ -34,6 +34,11 @@ const About = ({ scrollToContact, className, scrollToGallery }) => {
         fill in the <span onClick={scrollToContact}>contact form</span> at the
         bottom of the page.
       </p>
+      <DownButton
+        color={colours.darkGrey}
+        onClick={scrollToGallery}
+        style={{ marginTop: '5rem' }}
+      />
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import Button from './Button'
 import { Field, BtnField, Form } from './styled'
+import { colours } from '../styled'
 
 const encode = data => {
   return Object.keys(data)
@@ -107,10 +108,16 @@ const ContactForm = () => {
         />
       </Field>
       <BtnField>
-        <Button type="submit" disabled={!CheckValid(name, email, message)}>
+        <Button
+          color={colours.darkGrey}
+          type="submit"
+          disabled={!CheckValid(name, email, message)}
+        >
           Send Message
         </Button>
-        <Button onClick={clearForm}>Clear Form</Button>
+        <Button color={colours.darkGrey} onClick={clearForm}>
+          Clear Form
+        </Button>
       </BtnField>
     </Form>
   )
