@@ -31,6 +31,8 @@ export const Section = styled.section`
   min-height: 100vh;
   background-color: ${props => props.bgcolor};
   scroll-snap-align: start;
+  display: flex;
+  align-items: center;
   @media (max-width: 800px) {
     padding: 0 1rem;
   }
@@ -85,34 +87,36 @@ export const DownButton = styled.button`
   }
 `
 
-export const TwoColumnContainer = styled.div`
-  max-width: 1440px;
-  margin: auto;
-  display: grid;
-  padding: 3rem 0;
-  grid-template-columns: 1fr;
-  ${props =>
-    props.reverseMobile
-      ? css`
-          grid-template-areas: 'right' 'left';
-        `
-      : css`
-          grid-template-areas: 'left' 'right';
-        `}
-  grid-gap: 2rem;
-  @media (min-width: 800px) {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 'left right';
-  }
-`
-export const Cell = styled.div`
-  grid-area: ${props => props.area};
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
 export const Quote = styled.blockquote`
   font-size: 2rem;
   text-align: center;
+`
+export const TwoColumnContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: ${props =>
+    props.reverseOnMobile
+      ? `'right right' 'left left'`
+      : `'left left' 'right right'`};
+  @media (min-width: 1000px) {
+    grid-template-areas: 'left right';
+    padding: 3rem;
+    grid-gap: 3rem;
+  }
+`
+export const Cell = styled.div`
+  grid-area: ${props => (props.left ? 'left' : 'right')};
+  display: flex;
+  justify-items: center;
+  align-items: center;
+`
+export const ImgContainer = styled.div`
+  margin: auto;
+  width: 100%;
+  @media (min-width: 1400px) {
+    max-width: 80%;
+  }
+  @media (min-width: 1700px) {
+    max-width: 52%;
+  }
 `
