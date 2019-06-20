@@ -113,10 +113,10 @@ export const Cell = styled.div`
 export const ImgContainer = styled.div`
   margin: auto;
   width: 100%;
-  @media (min-width: 1400px) {
-    max-width: 80%;
+  /* @media (min-width: 1400px) {
+    max-width: 90%;
   }
   @media (min-width: 1700px) {
-    max-width: 52%;
-  }
+    max-width: 78%;
+  } */
 `

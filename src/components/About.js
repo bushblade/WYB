@@ -84,11 +84,13 @@ const About = ({ scrollToContact, className, scrollToGallery }) => {
           <ImgContainer>
             <Img
               fluid={night.childImageSharp.fluid}
-              style={{ margin: '1rem' }}
+              style={{ margin: '1rem', maxHeight: 'calc(50vh - 4rem)' }}
+              imgStyle={{ objectFit: 'contain' }}
             />
             <Img
               fluid={shroom.childImageSharp.fluid}
-              style={{ margin: '1rem' }}
+              style={{ margin: '1rem', maxHeight: 'calc(50vh - 4rem)' }}
+              imgStyle={{ objectFit: 'contain' }}
             />
           </ImgContainer>
         </Cell>

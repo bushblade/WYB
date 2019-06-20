@@ -23,7 +23,7 @@ const query = graphql`
         }
       }
     }
-    shroom: file(relativePath: { eq: "fireshroom.jpg" }) {
+    parachute: file(relativePath: { eq: "parachute.jpg" }) {
       childImageSharp {
         id
         fluid(maxWidth: 1000, quality: 75) {
@@ -37,7 +37,7 @@ const query = graphql`
 `
 
 const Poem = ({ className }) => {
-  const { mike, shroom } = useStaticQuery(query)
+  const { mike, parachute } = useStaticQuery(query)
   return (
     <div className={className}>
       <TwoColumnContainer reverseOnMobile>
@@ -45,11 +45,13 @@ const Poem = ({ className }) => {
           <ImgContainer>
             <Img
               fluid={mike.childImageSharp.fluid}
-              style={{ margin: '1rem' }}
+              style={{ margin: '1rem', maxHeight: 'calc(50vh - 4rem)' }}
+              imgStyle={{ objectFit: 'contain' }}
             />
             <Img
-              fluid={shroom.childImageSharp.fluid}
-              style={{ margin: '1rem' }}
+              fluid={parachute.childImageSharp.fluid}
+              style={{ margin: '1rem', maxHeight: 'calc(50vh - 4rem)' }}
+              imgStyle={{ objectFit: 'contain' }}
             />
           </ImgContainer>
         </Cell>
