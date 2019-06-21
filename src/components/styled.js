@@ -33,7 +33,7 @@ export const Section = styled.section`
   scroll-snap-align: start;
   display: flex;
   align-items: center;
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     padding: 0 1rem;
   }
 `
@@ -93,6 +93,7 @@ export const Quote = styled.blockquote`
 `
 export const TwoColumnContainer = styled.div`
   display: grid;
+  height: 100%;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: ${props =>
     props.reverseOnMobile
@@ -100,19 +101,23 @@ export const TwoColumnContainer = styled.div`
       : `'left left' 'right right'`};
   @media (min-width: 1000px) {
     grid-template-areas: 'left right';
-    padding: 3rem;
-    grid-gap: 3rem;
+    /* padding: 3rem; */
+    /* grid-gap: 3rem; */
   }
 `
 export const Cell = styled.div`
+  background: ${props => (props.bgdark ? colours.lightGrey : '')};
+  height: 100vh;
   grid-area: ${props => (props.left ? 'left' : 'right')};
   display: flex;
   justify-items: center;
   align-items: center;
+  padding: ${props => (props.hastext ? '3rem' : '')};
 `
 export const ImgContainer = styled.div`
   margin: auto;
   width: 100%;
+
   /* @media (min-width: 1400px) {
     max-width: 90%;
   }

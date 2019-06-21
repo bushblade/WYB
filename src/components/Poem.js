@@ -55,7 +55,7 @@ const Poem = ({ className }) => {
             />
           </ImgContainer>
         </Cell>
-        <Cell right>
+        <Cell right hastext>
           <div style={{ margin: 'auto' }}>
             <blockquote>
               A place to come to fulfil desires

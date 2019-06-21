@@ -41,7 +41,7 @@ const About = ({ scrollToContact, className, scrollToGallery }) => {
   return (
     <div className={className}>
       <TwoColumnContainer>
-        <Cell left>
+        <Cell left hastext>
           <div>
             <h2>Established in June of 2012</h2>
             <p>
