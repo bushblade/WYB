@@ -50,6 +50,7 @@ export const Field = styled.div`
 
 export const Form = styled.form`
   max-width: 800px;
+  min-width: 600px;
   margin: auto;
   padding: 3rem 0;
 `
