@@ -3,13 +3,7 @@ import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
-import {
-  colours,
-  DownButton,
-  TwoColumnContainer,
-  Cell,
-  ImgContainer,
-} from './styled'
+import { colours, TwoColumnContainer, Cell, ImgContainer } from './styled'
 
 const query = graphql`
   query poemImages {

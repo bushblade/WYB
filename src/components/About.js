@@ -69,9 +69,7 @@ const About = ({ scrollToContact, className, scrollToGallery }) => {
                 online community
               </a>
               , <a href="mailto:westyorkshirebushcraftgroup@gmail.com">email</a>{' '}
-              us or fill in the{' '}
-              <span onClick={scrollToContact}>contact form</span> at the bottom
-              of the page.
+              us or fill in the contact form at the bottom of the page.
             </p>
             <DownButton
               color={colours.darkGrey}

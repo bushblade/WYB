@@ -44,7 +44,7 @@ export const Field = styled.div`
   }
   textarea {
     max-height: 600px;
-    min-height: 120px;
+    min-height: 200px;
   }
 `
 

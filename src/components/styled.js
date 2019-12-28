@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, keyframes, css } from 'styled-components'
+import styled, { createGlobalStyle, keyframes } from 'styled-components'
 
 export const colours = {
   kahki: '#decd87',
@@ -101,7 +101,7 @@ export const TwoColumnContainer = styled.div`
       : `'left left' 'right right'`};
   @media (min-width: 1000px) {
     grid-template-areas: 'left right';
-    /* padding: 3rem; */
+    padding: 0 3rem;
     /* grid-gap: 3rem; */
   }
 `

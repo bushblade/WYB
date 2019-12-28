@@ -34,7 +34,7 @@ const ContactForm = () => {
   })
 
   const handleSubmit = e => {
-    if (CheckValid(name, email, message)) {
+    if (CheckValid(name, email, message) && !sent) {
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -77,9 +77,9 @@ const ContactForm = () => {
       name="contact"
       method="post"
     >
-      <input type="hidden" name="Form-name" value="contact" />
+      <input type="hidden" name="Form-name" value="contact" disabled={sent} />
       <Field valid={name.valid} length={name.text.length}>
-        <label>Your Name: </label>
+        <label htmlFor="name">Your Name: </label>
         <input
           type="text"
           name="name"
@@ -89,29 +89,32 @@ const ContactForm = () => {
         />
       </Field>
       <Field valid={email.valid} length={email.text.length}>
-        <label>Your Email: </label>
+        <label htmlFor="email">Your Email: </label>
         <input
           type="email"
           name="email"
           value={email.text}
           placeholder="you@youremail.com"
           onChange={handleChange(email, setEmail)}
+          disabled={sent}
         />
       </Field>
       <Field valid={message.valid} length={message.text.length}>
-        <label>Message: </label>
+        <label htmlFor="message">Message: </label>
         <textarea
           name="message"
           value={message.text}
           placeholder="What do you want to say?"
           onChange={handleChange(message, setMessage)}
+          maxLength="200"
+          disabled={sent}
         />
       </Field>
       <BtnField>
         <Button
           color={colours.darkGrey}
           type="submit"
-          disabled={!CheckValid(name, email, message)}
+          disabled={!CheckValid(name, email, message) && !sent}
         >
           Send Message
         </Button>
