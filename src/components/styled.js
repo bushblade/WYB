@@ -29,8 +29,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Section = styled.section`
   min-height: 100vh;
-  background-color: ${props => props.bgcolor};
-  scroll-snap-align: start;
+  background-color: ${colours.lowOpacityWhite};
   display: flex;
   align-items: center;
   @media (max-width: 1000px) {

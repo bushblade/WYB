@@ -7,8 +7,7 @@ import styled from 'styled-components'
 import { GlobalStyle } from './styled'
 
 const Container = styled.div`
-  scroll-snap-type: y proximity;
-  height: 100vh;
+  min-height: 100vh;
   overflow: auto;
 `
 
