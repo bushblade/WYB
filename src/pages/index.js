@@ -36,14 +36,9 @@ const IndexPage = () => {
       <SEO title={title} />
       <Banner title={title} scrollToAbout={scrollTo(aboutRef)} />
       <Section bgcolor={colours.lowOpacityWhite} ref={aboutRef}>
-        <About
-          scrollToContact={scrollTo(contactRef)}
-          scrollToGallery={scrollTo(galleryRef)}
-        />
+        <About scrollToContact={scrollTo(contactRef)} />
       </Section>
-      <Section ref={galleryRef} bgcolor={colours.lowOpacityWhite}>
-        <Poem />
-      </Section>
+
       <Section ref={contactRef} bgcolor={colours.lowOpacityLightGrey}>
         <ContactForm />
       </Section>

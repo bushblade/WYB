@@ -36,13 +36,13 @@ const query = graphql`
   }
 `
 
-const About = ({ scrollToContact, className, scrollToGallery }) => {
+const About = ({ scrollToContact, className }) => {
   const { night, shroom } = useStaticQuery(query)
   return (
     <div className={className}>
       <TwoColumnContainer>
         <Cell left hastext>
-          <div>
+          <article>
             <h2>Established in June of 2012</h2>
             <p>
               The West Yorkshire Bushcraft group was created in 2012 to bring
@@ -68,15 +68,18 @@ const About = ({ scrollToContact, className, scrollToGallery }) => {
               >
                 online community
               </a>
-              , <a href="mailto:westyorkshirebushcraftgroup@gmail.com">email</a>{' '}
-              us or fill in the contact form at the bottom of the page.
+              ,{' '}
+              <a href="mailto:westyorkshirebushcraftgroup@gmail.com">
+                email us
+              </a>{' '}
+              or fill in the contact form at the bottom of the page.
             </p>
             <DownButton
               color={colours.darkGrey}
-              onClick={scrollToGallery}
+              onClick={scrollToContact}
               style={{ marginTop: '5rem' }}
             />
-          </div>
+          </article>
         </Cell>
         <Cell right>
           <ImgContainer>
@@ -105,11 +108,11 @@ export default styled(About)`
   p {
     font-size: 1.4rem;
   }
-  a,
-  span {
+  a {
     cursor: pointer;
     text-decoration: none;
     font-weight: 500;
+    color: #404040;
     box-shadow: inset 0 -0.175em ${colours.lowOpacityWhite},
       inset 0 -0.25em ${colours.lightGrey};
     background: linear-gradient(

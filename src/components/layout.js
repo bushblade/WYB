@@ -5,11 +5,23 @@ import BackgroundImage from 'gatsby-background-image'
 import styled from 'styled-components'
 
 import { GlobalStyle } from './styled'
+import SideMenu from '../components/sideMenu'
 
-const Container = styled.div`
+const Main = styled.main`
   scroll-snap-type: y proximity;
   height: 100vh;
   overflow: auto;
+  width: 100%;
+  grid-area: main;
+`
+
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  @media (min-width: 1000px) {
+    grid-template-areas: 'menu main';
+  }
+  grid-template-areas: 'main main';
 `
 
 const Layout = ({ children }) => {
@@ -34,7 +46,10 @@ const Layout = ({ children }) => {
         fadeIn="soft"
         style={{ overflow: 'hidden' }}
       >
-        <Container>{children}</Container>
+        <Container>
+          <SideMenu />
+          <Main>{children}</Main>
+        </Container>
       </BackgroundImage>
     </>
   )
