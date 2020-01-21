@@ -1,30 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { animated, useTransition } from 'react-spring'
 
 import { colours } from '../styled'
 import MenuButton from './MenuButton'
 
-export const useIsMobile = () => {
-  const isMobile = () => {
-    if (typeof window !== 'undefined') return window.innerWidth < 1000
-  }
-  const [mobile, setMobile] = useState(isMobile())
-
-  useEffect(() => {
-    console.log(mobile)
-    const checkWindowSize = () => setMobile(isMobile())
-    if (window) {
-      checkWindowSize()
-      window.addEventListener('resize', checkWindowSize)
-      return () => window.removeEventListener('resize', checkWindowSize)
-    }
-  }, [])
-  return mobile
-}
+import useIsMobile from '../../hooks/useIsMobile'
 
 const InnerMenu = styled.nav`
   height: 100vh;
+  width: 50vw;
+  @media (max-width: 700px) {
+    width: 80vw;
+  }
   background-color: ${colours.darkGrey};
   @media (min-width: 1000px) {
     width: 100%;
@@ -41,9 +29,9 @@ const SideMenu = () => {
   const isMobile = useIsMobile()
 
   const menuTranstion = useTransition(open, null, {
-    from: { transform: 'translate3d(-100%,0,0)' },
-    enter: { transform: 'translate3d(0, 0, 0)' },
-    leave: { transform: 'translate3d(-100%,0,0)' },
+    from: { transform: 'translate3d(-100%,0,0)', opacity: 0.5 },
+    enter: { transform: 'translate3d(0, 0, 0)', opacity: 1 },
+    leave: { transform: 'translate3d(-100%,0,0)', opacity: 0.5 },
   })
 
   return (
@@ -60,7 +48,6 @@ const SideMenu = () => {
                   position: 'fixed',
                   top: 0,
                   left: 0,
-                  width: '100%',
                   height: '100vh',
                   backgroundColor: 'pink',
                   ...props,
