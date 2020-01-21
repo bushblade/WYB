@@ -4,25 +4,9 @@ import { animated, useTransition } from 'react-spring'
 
 import { colours } from '../styled'
 import MenuButton from './MenuButton'
+import Menu from './Menu'
 
 import useIsMobile from '../../hooks/useIsMobile'
-
-const InnerMenu = styled.nav`
-  height: 100vh;
-  width: 50vw;
-  @media (max-width: 700px) {
-    width: 80vw;
-  }
-  background-color: ${colours.darkGrey};
-  @media (min-width: 1000px) {
-    width: 100%;
-    grid-area: menu;
-  }
-`
-
-const Menu = () => {
-  return <InnerMenu />
-}
 
 const SideMenu = () => {
   const [open, setOpen] = useState(false)
