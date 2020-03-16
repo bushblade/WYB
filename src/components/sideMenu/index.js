@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 import { animated, useTransition } from 'react-spring'
 
-import { colours } from '../styled'
+// import { colours } from '../styled'
 import MenuButton from './MenuButton'
 import Menu from './Menu'
 

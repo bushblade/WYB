@@ -9,7 +9,7 @@ import { Section, colours } from '../components/styled'
 import About from '../components/About'
 import ContactForm from '../components/contactform'
 // import Galleries from '../components/Galleries'
-import Poem from '../components/Poem'
+// import Poem from '../components/Poem'
 
 const scrollTo = ref => () => ref.current.scrollIntoView({ behavior: 'smooth' })
 
@@ -29,7 +29,7 @@ const IndexPage = () => {
   `)
   const contactRef = useRef(null)
   const aboutRef = useRef(null)
-  const galleryRef = useRef(null)
+  // const galleryRef = useRef(null)
 
   return (
     <Layout>

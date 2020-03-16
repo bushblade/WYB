@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 const useIsMobile = () => {
   const isMobile = () => {
@@ -14,7 +14,7 @@ const useIsMobile = () => {
       window.addEventListener('resize', checkWindowSize)
       return () => window.removeEventListener('resize', checkWindowSize)
     }
-  }, [])
+  }, [mobile])
   return mobile
 }
 
