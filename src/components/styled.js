@@ -107,7 +107,7 @@ export const TwoColumnContainer = styled.div`
 `
 export const Cell = styled.div`
   background: ${props => (props.bgdark ? colours.lightGrey : '')};
-  height: 100vh;
+  // min-height: 100vh;
   grid-area: ${props => (props.left ? 'left' : 'right')};
   display: flex;
   justify-items: center;
