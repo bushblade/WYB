@@ -21,9 +21,41 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Lora', serif;
     margin: 0;
     background: lightslategray;    
+    overflow-x: hidden;
   }   
+
   h2 {
+    font-size: 2rem;
     font-family: 'Quintessential', cursive;
+  }
+  p {
+    font-size: 1.4rem;
+  }
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+    color: #404040;
+    box-shadow: inset 0 -0.175em ${colours.lowOpacityWhite},
+      inset 0 -0.25em ${colours.lightGrey};
+    background: linear-gradient(
+      0deg,
+      rgba(238, 238, 238, 0) 0%,
+      rgba(238, 238, 238, 0) 49%,
+      rgba(238, 238, 238, 0) 100%
+    );
+    :active,
+    :visited {
+      color: #404040;
+    }
+    :hover {
+      background: linear-gradient(
+        0deg,
+        rgba(238, 238, 238, 0.7) 0%,
+        rgba(238, 238, 238, 0.2) 49%,
+        rgba(238, 238, 238, 0) 100%
+      );
+    }
   }
 `
 
@@ -31,11 +63,11 @@ export const Section = styled.section`
   min-height: 100vh;
   background-color: ${(props) => props.bgcolor};
   scroll-snap-align: start;
-  display: flex;
-  align-items: center;
-  @media (max-width: 1000px) {
-    padding: 0 1rem;
-  }
+  // display: flex;
+  // align-items: center;
+  // @media (max-width: 1000px) {
+  //   padding: 0 1rem;
+  // }
 `
 
 const btnAnimation = keyframes`
@@ -111,19 +143,8 @@ export const Cell = styled.div`
   background: ${(props) => (props.bgdark ? colours.lightGrey : '')};
   // min-height: 100vh;
   grid-area: ${(props) => (props.left ? 'left' : 'right')};
-  display: flex;
-  justify-items: center;
-  align-items: center;
+  // display: flex;
+  // justify-items: center;
+  // align-items: center;
   padding: ${(props) => (props.hastext ? '3rem' : '')};
-`
-export const ImgContainer = styled.div`
-  margin: auto;
-  width: 100%;
-
-  /* @media (min-width: 1400px) {
-    max-width: 90%;
-  }
-  @media (min-width: 1700px) {
-    max-width: 78%;
-  } */
 `

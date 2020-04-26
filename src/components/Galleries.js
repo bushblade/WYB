@@ -3,13 +3,14 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
-import { TwoColumnContainer } from '../components/styled'
+import { TwoColumnContainer, Cell } from '../components/styled'
+import Card from './Card'
 
 const galleriesQuery = graphql`
   query galleryimages {
     campcraft: file(relativePath: { eq: "camp&craft.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1000, maxHeight: 1000) {
+        fluid(maxWidth: 1000) {
           originalName
           ...GatsbyImageSharpFluid
         }
@@ -17,7 +18,7 @@ const galleriesQuery = graphql`
     }
     floraforage: file(relativePath: { eq: "flora&forage.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1000, maxHeight: 1000) {
+        fluid(maxWidth: 1000) {
           originalName
           ...GatsbyImageSharpFluid
         }
@@ -25,7 +26,7 @@ const galleriesQuery = graphql`
     }
     tracktrail: file(relativePath: { eq: "track&trail.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1000, maxHeight: 1000) {
+        fluid(maxWidth: 1000) {
           originalName
           ...GatsbyImageSharpFluid
         }
@@ -33,7 +34,7 @@ const galleriesQuery = graphql`
     }
     sitescene: file(relativePath: { eq: "sites&scenery.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1000, maxHeight: 1000) {
+        fluid(maxWidth: 1000) {
           originalName
           ...GatsbyImageSharpFluid
         }
@@ -42,21 +43,35 @@ const galleriesQuery = graphql`
   }
 `
 
-const Card = styled.div``
+const Heading = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+`
 
 const Galleries = () => {
   const data = useStaticQuery(galleriesQuery)
   return (
-    <TwoColumnContainer>
-      <div>
-        <Img fluid={data.campcraft.childImageSharp.fluid} />
-        <Img fluid={data.floraforage.childImageSharp.fluid} />
-      </div>
-      <div>
-        <Img fluid={data.tracktrail.childImageSharp.fluid} />
-        <Img fluid={data.sitescene.childImageSharp.fluid} />
-      </div>
-    </TwoColumnContainer>
+    <>
+      <Heading>
+        <h2>Members Galleries</h2>
+        <p>
+          The images in the galleries have been taken by our members while in
+          attendance of meets, they are usually updated after each meet so if
+          you're interested in what we get up to, please have a look.
+        </p>
+      </Heading>
+      <TwoColumnContainer>
+        <Cell left>
+          <Card image={data.campcraft} title="Camp & Craft" />
+          <Card image={data.floraforage} title="Flora, Fungi & Forage" />
+        </Cell>
+        <Cell right>
+          <Card image={data.tracktrail} title="Track & Trail" />
+          <Card image={data.sitescene} title="Sites & Scenery" />
+        </Cell>
+      </TwoColumnContainer>
+    </>
   )
 }
 

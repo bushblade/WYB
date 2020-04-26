@@ -30,16 +30,16 @@ const IndexPage = () => {
   `)
   const contactRef = useRef(null)
   const aboutRef = useRef(null)
-  // const galleryRef = useRef(null)
+  const galleryRef = useRef(null)
 
   return (
     <Layout>
       <SEO title={title} />
       <Banner title={title} scrollToAbout={scrollTo(aboutRef)} />
       <Section bgcolor={colours.lowOpacityWhite} ref={aboutRef}>
-        <About scrollToContact={scrollTo(contactRef)} />
+        <About scrollToContact={scrollTo(galleryRef)} />
       </Section>
-      <Section bgcolor={colours.lowOpacityWhite}>
+      <Section ref={galleryRef} bgcolor={colours.lowOpacityWhite}>
         <Galleries />
       </Section>
 

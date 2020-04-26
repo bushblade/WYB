@@ -60,38 +60,4 @@ const About = ({ scrollToContact, className }) => {
   )
 }
 
-export default styled(About)`
-  color: ${colours.darkGrey};
-  h2 {
-    font-size: 2rem;
-  }
-  p {
-    font-size: 1.4rem;
-  }
-  a {
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: 500;
-    color: #404040;
-    box-shadow: inset 0 -0.175em ${colours.lowOpacityWhite},
-      inset 0 -0.25em ${colours.lightGrey};
-    background: linear-gradient(
-      0deg,
-      rgba(238, 238, 238, 0) 0%,
-      rgba(238, 238, 238, 0) 49%,
-      rgba(238, 238, 238, 0) 100%
-    );
-    :active,
-    :visited {
-      color: #404040;
-    }
-    :hover {
-      background: linear-gradient(
-        0deg,
-        rgba(238, 238, 238, 0.7) 0%,
-        rgba(238, 238, 238, 0.2) 49%,
-        rgba(238, 238, 238, 0) 100%
-      );
-    }
-  }
-`
+export default About
