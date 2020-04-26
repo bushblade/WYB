@@ -8,10 +8,11 @@ import Banner from '../components/banner'
 import { Section, colours } from '../components/styled'
 import About from '../components/About'
 import ContactForm from '../components/contactform'
-// import Galleries from '../components/Galleries'
+import Galleries from '../components/Galleries'
 // import Poem from '../components/Poem'
 
-const scrollTo = ref => () => ref.current.scrollIntoView({ behavior: 'smooth' })
+const scrollTo = (ref) => () =>
+  ref.current.scrollIntoView({ behavior: 'smooth' })
 
 const IndexPage = () => {
   const {
@@ -37,6 +38,9 @@ const IndexPage = () => {
       <Banner title={title} scrollToAbout={scrollTo(aboutRef)} />
       <Section bgcolor={colours.lowOpacityWhite} ref={aboutRef}>
         <About scrollToContact={scrollTo(contactRef)} />
+      </Section>
+      <Section bgcolor={colours.lowOpacityWhite}>
+        <Galleries />
       </Section>
 
       <Section ref={contactRef} bgcolor={colours.lowOpacityLightGrey}>

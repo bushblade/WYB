@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import { graphql, useStaticQuery } from 'gatsby'
 
 import {
   colours,
@@ -11,33 +10,7 @@ import {
   ImgContainer,
 } from './styled'
 
-const query = graphql`
-  query aboutImages {
-    night: file(relativePath: { eq: "night.jpg" }) {
-      childImageSharp {
-        id
-        fluid(maxWidth: 1000, quality: 75) {
-          ...GatsbyImageSharpFluid
-          srcWebp
-          src
-        }
-      }
-    }
-    shroom: file(relativePath: { eq: "fireshroom.jpg" }) {
-      childImageSharp {
-        id
-        fluid(maxWidth: 1000, quality: 75) {
-          ...GatsbyImageSharpFluid
-          srcWebp
-          src
-        }
-      }
-    }
-  }
-`
-
 const About = ({ scrollToContact, className }) => {
-  const { night, shroom } = useStaticQuery(query)
   return (
     <div className={className}>
       <TwoColumnContainer>
@@ -81,20 +54,7 @@ const About = ({ scrollToContact, className }) => {
             />
           </article>
         </Cell>
-        <Cell right>
-          <ImgContainer>
-            <Img
-              fluid={night.childImageSharp.fluid}
-              style={{ margin: '1rem', maxHeight: 'calc(50vh - 4rem)' }}
-              imgStyle={{ objectFit: 'contain' }}
-            />
-            <Img
-              fluid={shroom.childImageSharp.fluid}
-              style={{ margin: '1rem', maxHeight: 'calc(50vh - 4rem)' }}
-              imgStyle={{ objectFit: 'contain' }}
-            />
-          </ImgContainer>
-        </Cell>
+        <Cell right></Cell>
       </TwoColumnContainer>
     </div>
   )

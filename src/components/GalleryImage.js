@@ -7,10 +7,11 @@ const ImageWrapper = styled.div`
   cursor: pointer;
 `
 
-const GalleryImage = link => ({ index, onClick, photo, margin }) => (
+const GalleryImage = (link) => ({ index, onClick, photo, margin, key }) => (
   <ImageWrapper
     style={{ margin, height: photo.height, width: photo.width }}
     // onClick={e => onClick(e, { index, photo })}
+    key={key}
   >
     <a href={link} target="_blank" rel="noopener noreferrer">
       <div>
