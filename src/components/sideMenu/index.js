@@ -33,7 +33,6 @@ const SideMenu = () => {
                   top: 0,
                   left: 0,
                   height: '100vh',
-                  backgroundColor: 'pink',
                   ...props,
                 }}
               >

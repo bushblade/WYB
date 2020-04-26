@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Section = styled.section`
   min-height: 100vh;
-  background-color: ${props => props.bgcolor};
+  background-color: ${(props) => props.bgcolor};
   scroll-snap-align: start;
   display: flex;
   align-items: center;
@@ -61,7 +61,7 @@ export const DownButton = styled.button`
   margin: auto;
   padding: 2rem 1rem;
   background: transparent;
-  border: 0.2rem solid ${props => (props.color ? props.color : 'black')};
+  border: 0.2rem solid ${(props) => (props.color ? props.color : 'black')};
   border-radius: 1.5rem;
   outline: none;
   cursor: pointer;
@@ -78,7 +78,7 @@ export const DownButton = styled.button`
     width: 1rem;
     height: 1rem;
     margin-left: -0.5rem;
-    border: 0.2rem solid ${props => (props.color ? props.color : 'black')};
+    border: 0.2rem solid ${(props) => (props.color ? props.color : 'black')};
     border-top: transparent;
     border-left: transparent;
     transform: rotate(45deg);
@@ -94,25 +94,27 @@ export const Quote = styled.blockquote`
 export const TwoColumnContainer = styled.div`
   display: grid;
   height: 100%;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: ${props =>
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-areas: ${(props) =>
     props.reverseOnMobile
       ? `'right right' 'left left'`
       : `'left left' 'right right'`};
   @media (min-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: 'left right';
     padding: 0 3rem;
     /* grid-gap: 3rem; */
   }
 `
 export const Cell = styled.div`
-  background: ${props => (props.bgdark ? colours.lightGrey : '')};
+  background: ${(props) => (props.bgdark ? colours.lightGrey : '')};
   // min-height: 100vh;
-  grid-area: ${props => (props.left ? 'left' : 'right')};
+  grid-area: ${(props) => (props.left ? 'left' : 'right')};
   display: flex;
   justify-items: center;
   align-items: center;
-  padding: ${props => (props.hastext ? '3rem' : '')};
+  padding: ${(props) => (props.hastext ? '3rem' : '')};
 `
 export const ImgContainer = styled.div`
   margin: auto;

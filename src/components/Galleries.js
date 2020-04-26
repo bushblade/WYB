@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-
+import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 import { TwoColumnContainer } from '../components/styled'
@@ -42,11 +42,21 @@ const galleriesQuery = graphql`
   }
 `
 
+const Card = styled.div``
+
 const Galleries = () => {
+  const data = useStaticQuery(galleriesQuery)
   return (
-    <div>
-      <TwoColumnContainer>images here</TwoColumnContainer>
-    </div>
+    <TwoColumnContainer>
+      <div>
+        <Img fluid={data.campcraft.childImageSharp.fluid} />
+        <Img fluid={data.floraforage.childImageSharp.fluid} />
+      </div>
+      <div>
+        <Img fluid={data.tracktrail.childImageSharp.fluid} />
+        <Img fluid={data.sitescene.childImageSharp.fluid} />
+      </div>
+    </TwoColumnContainer>
   )
 }
 

@@ -12,7 +12,7 @@ const InnerMenu = styled.nav`
     width: 80vw;
   }
   background-color: ${colours.darkGrey};
-  @media (min-width: 1000px) {
+  @media (min-width: 1200px) {
     width: 100%;
     grid-area: menu;
   }

@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
 
 import {
   colours,
   DownButton,
   TwoColumnContainer,
   Cell,
-  ImgContainer,
+  // ImgContainer,
 } from './styled'
 
 const About = ({ scrollToContact, className }) => {

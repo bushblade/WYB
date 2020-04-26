@@ -37,7 +37,7 @@ const Button = styled.div`
   span:after {
     transform: translateY(0.7rem);
   }
-  ${props =>
+  ${(props) =>
     props.open &&
     css`
       transform: rotate(45deg);
@@ -53,7 +53,7 @@ const Button = styled.div`
         background-color: whitesmoke;
       }
     `}
-  @media (min-width: 1000px) {
+  @media (min-width: 1200px) {
     display: none;
   }
 `

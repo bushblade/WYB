@@ -18,7 +18,7 @@ const Main = styled.main`
 const Container = styled.div`
   display: grid;
   grid-template-columns: 20rem 1fr;
-  @media (min-width: 1000px) {
+  @media (min-width: 1200px) {
     grid-template-areas: 'menu main';
   }
   grid-template-areas: 'main main';
