@@ -1,6 +1,5 @@
 import React, { useRef } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-// import styled from 'styled-components'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -9,7 +8,6 @@ import { Section, colours } from '../components/styled'
 import About from '../components/About'
 import ContactForm from '../components/contactform'
 import Galleries from '../components/Galleries'
-// import Poem from '../components/Poem'
 
 const scrollTo = (ref) => () =>
   ref.current.scrollIntoView({ behavior: 'smooth' })
@@ -32,8 +30,14 @@ const IndexPage = () => {
   const aboutRef = useRef(null)
   const galleryRef = useRef(null)
 
+  const indexlinks = [
+    { to: 'About', scrollto: scrollTo(aboutRef) },
+    { to: 'Galleries', scrollto: scrollTo(galleryRef) },
+    { to: 'Contact', scrollto: scrollTo(contactRef) },
+  ]
+
   return (
-    <Layout>
+    <Layout indexlinks={indexlinks}>
       <SEO title={title} />
       <Banner title={title} scrollToAbout={scrollTo(aboutRef)} />
       <Section bgcolor={colours.lowOpacityWhite} ref={aboutRef}>

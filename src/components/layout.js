@@ -24,7 +24,7 @@ const Container = styled.div`
   grid-template-areas: 'main main';
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ children, indexlinks }) => {
   const data = useStaticQuery(graphql`
     query background {
       mainImage: file(relativePath: { eq: "sunrise-background01.jpg" }) {
@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
         style={{ overflow: 'hidden' }}
       >
         <Container>
-          <SideMenu />
+          <SideMenu indexlinks={indexlinks} />
           <Main>{children}</Main>
         </Container>
       </BackgroundImage>

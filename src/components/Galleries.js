@@ -1,6 +1,5 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 import { TwoColumnContainer, Cell } from '../components/styled'
@@ -63,12 +62,34 @@ const Galleries = () => {
       </Heading>
       <TwoColumnContainer>
         <Cell left>
-          <Card image={data.campcraft} title="Camp & Craft" />
-          <Card image={data.floraforage} title="Flora, Fungi & Forage" />
+          <Card
+            image={data.campcraft}
+            title="Camp & Craft"
+            link="https://bit.ly/2S8XB8h"
+          />
         </Cell>
         <Cell right>
-          <Card image={data.tracktrail} title="Track & Trail" />
-          <Card image={data.sitescene} title="Sites & Scenery" />
+          <Card
+            image={data.tracktrail}
+            title="Track & Trail"
+            link="https://bit.ly/2KC5A9C"
+          />
+        </Cell>
+      </TwoColumnContainer>
+      <TwoColumnContainer>
+        <Cell left>
+          <Card
+            image={data.floraforage}
+            title="Flora, Fungi & Forage"
+            link="https://bit.ly/358Ihh5"
+          />
+        </Cell>
+        <Cell>
+          <Card
+            image={data.sitescene}
+            title="Sites & Scenery"
+            link="https://bit.ly/3cPcGUd"
+          />
         </Cell>
       </TwoColumnContainer>
     </>

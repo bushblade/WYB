@@ -8,7 +8,7 @@ import Menu from './Menu'
 
 import useIsMobile from '../../hooks/useIsMobile'
 
-const SideMenu = () => {
+const SideMenu = ({ indexlinks }) => {
   const [open, setOpen] = useState(false)
   const isMobile = useIsMobile()
 
@@ -36,12 +36,15 @@ const SideMenu = () => {
                   ...props,
                 }}
               >
-                <Menu />
+                <Menu
+                  indexlinks={indexlinks}
+                  closeMenu={() => setOpen(false)}
+                />
               </animated.nav>
             )
         )
       ) : (
-        <Menu />
+        <Menu indexlinks={indexlinks} />
       )}
     </>
   )

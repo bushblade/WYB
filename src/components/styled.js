@@ -10,6 +10,7 @@ export const colours = {
   lightGrey: '#555555',
   lowOpacityLightGrey: 'rgba(85, 85, 85, 0.9)',
   lowOpacityWhite: 'rgba(239, 239, 239, 0.7)',
+  white: 'rgba(239, 239, 239, 1)',
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -17,7 +18,6 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }   
   body {
-    /* font-family: 'Quintessential', cursive; */
     font-family: 'Lora', serif;
     margin: 0;
     background: lightslategray;    
@@ -63,11 +63,7 @@ export const Section = styled.section`
   min-height: 100vh;
   background-color: ${(props) => props.bgcolor};
   scroll-snap-align: start;
-  // display: flex;
-  // align-items: center;
-  // @media (max-width: 1000px) {
-  //   padding: 0 1rem;
-  // }
+  padding: 4rem 0;
 `
 
 const btnAnimation = keyframes`
@@ -136,15 +132,10 @@ export const TwoColumnContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 'left right';
     padding: 0 3rem;
-    /* grid-gap: 3rem; */
   }
 `
 export const Cell = styled.div`
   background: ${(props) => (props.bgdark ? colours.lightGrey : '')};
-  // min-height: 100vh;
   grid-area: ${(props) => (props.left ? 'left' : 'right')};
-  // display: flex;
-  // justify-items: center;
-  // align-items: center;
-  padding: ${(props) => (props.hastext ? '3rem' : '')};
+  // padding: ${(props) => (props.hastext ? '3rem' : '')};
 `
