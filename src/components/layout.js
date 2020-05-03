@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import styled from 'styled-components'
+import 'line-awesome/dist/line-awesome/css/line-awesome.css'
 
 import { GlobalStyle } from './styled'
 import SideMenu from '../components/sideMenu'
