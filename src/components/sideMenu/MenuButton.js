@@ -38,7 +38,7 @@ const Button = styled.div`
     transform: translateY(0.7rem);
   }
   ${(props) =>
-    props.open &&
+    props.menuOpen &&
     css`
       transform: rotate(45deg);
       span {
@@ -58,8 +58,8 @@ const Button = styled.div`
   }
 `
 
-const MenuButton = ({ open, setOpen }) => (
-  <Button open={open} onClick={() => setOpen(!open)}>
+const MenuButton = ({ menuOpen, toggleMenu }) => (
+  <Button menuOpen={menuOpen} onClick={toggleMenu}>
     <span></span>
   </Button>
 )

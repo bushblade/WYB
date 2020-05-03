@@ -72,6 +72,7 @@ export default styled(Menu)`
     font-size: 1.5rem;
     color: ${colours.white};
     text-align: center;
+    margin-top: 5rem;
   }
   ul {
     list-style: none;

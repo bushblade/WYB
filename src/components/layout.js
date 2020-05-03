@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
@@ -37,6 +37,14 @@ const Layout = ({ children, indexlinks }) => {
       }
     }
   `)
+
+  const [menuOpen, setMenuOpen] = useState(false)
+  const closeMenu = () => {
+    if (menuOpen) setMenuOpen(false)
+  }
+
+  const toggleMenu = () => setMenuOpen(!menuOpen)
+
   return (
     <>
       <GlobalStyle />
@@ -48,8 +56,13 @@ const Layout = ({ children, indexlinks }) => {
         style={{ overflow: 'hidden' }}
       >
         <Container>
-          <SideMenu indexlinks={indexlinks} />
-          <Main>{children}</Main>
+          <SideMenu
+            indexlinks={indexlinks}
+            menuOpen={menuOpen}
+            closeMenu={closeMenu}
+            toggleMenu={toggleMenu}
+          />
+          <Main onClick={closeMenu}>{children}</Main>
         </Container>
       </BackgroundImage>
     </>
