@@ -21,13 +21,18 @@ const InnerMenu = styled.nav`
     list-style: none;
     color: ${colours.white};
     margin: auto;
-    font-size: 3rem;
+    font-size: 2.5rem;
     width: 100%;
     text-align: center;
-    line-height: 5rem;
+    line-height: 4rem;
     padding: 0;
-    li {
+    button {
       cursor: pointer;
+      background: none;
+      font-size: inherit;
+      border: none;
+      color: ${colours.white} !important;
+      font-family: 'Lora', serif;
     }
   }
 `
@@ -37,14 +42,15 @@ const Menu = ({ indexlinks, closeMenu }) => {
     <InnerMenu>
       <ul>
         {indexlinks.map(({ to, scrollto }) => (
-          <li
-            onClick={() => {
-              scrollto()
-              if (closeMenu) closeMenu()
-            }}
-            key={to}
-          >
-            {to}
+          <li key={to}>
+            <button
+              onClick={() => {
+                scrollto()
+                if (closeMenu) closeMenu()
+              }}
+            >
+              {to}
+            </button>
           </li>
         ))}
       </ul>
