@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { animated, useTransition } from 'react-spring'
 
 import MenuButton from './MenuButton'

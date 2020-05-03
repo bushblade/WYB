@@ -50,9 +50,8 @@ export const Field = styled.div`
 
 export const Form = styled.form`
   max-width: 800px;
-  min-width: 600px;
   margin: auto;
-  padding: 3rem 0;
+  padding: 3rem 1.5rem;
 `
 
 export const BtnField = styled.div`
@@ -61,7 +60,4 @@ export const BtnField = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  @media (max-width: 780px) {
-    justify-content: space-around;
-  }
 `
