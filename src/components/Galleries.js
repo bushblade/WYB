@@ -60,7 +60,7 @@ const Galleries = () => {
           you're interested in what we get up to, please have a look.
         </p>
       </Heading>
-      <TwoColumnContainer>
+      <TwoColumnContainer images>
         <Cell left>
           <Card
             image={data.campcraft}
@@ -76,7 +76,7 @@ const Galleries = () => {
           />
         </Cell>
       </TwoColumnContainer>
-      <TwoColumnContainer>
+      <TwoColumnContainer images>
         <Cell left>
           <Card
             image={data.floraforage}
