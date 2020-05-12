@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Button from './Button'
 import { Field, BtnField, Form } from './styled'
 import { colours } from '../styled'
+import MessageSuccess from './MessageSuccess'
 
 const encode = data => {
   return Object.keys(data)
@@ -70,7 +71,7 @@ const ContactForm = () => {
     setState({ ...state, valid: state.regex.test(value), text: value })
   }
 
-  return (
+  return !sent ? (
     <Form
       onSubmit={handleSubmit}
       data-netlify="true"
@@ -114,7 +115,7 @@ const ContactForm = () => {
         <Button
           color={colours.darkGrey}
           type="submit"
-          disabled={!CheckValid(name, email, message) && !sent}
+          disabled={!CheckValid(name, email, message) || sent}
         >
           Send Message
         </Button>
@@ -123,6 +124,8 @@ const ContactForm = () => {
         </Button>
       </BtnField>
     </Form>
+  ) : (
+    <MessageSuccess />
   )
 }
 
