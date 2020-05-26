@@ -19,7 +19,7 @@ const About = ({ scrollToContact, className }) => {
             <p>
               The West Yorkshire Bushcraft group was created in 2012 to bring
               together those interested in Bushcraft and Bushcraft related
-              skills in and around West Yorkshire. We are not an organisation,
+              skills in and around West Yorkshire. We are not an organization,
               business or charity, just a group of like minded individuals
               looking to share skills and experience.{' '}
             </p>

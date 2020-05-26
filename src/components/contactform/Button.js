@@ -10,6 +10,7 @@ const BtnContainer = styled.div`
     margin: 0 0.5rem 1rem 0;
   }
   button {
+    color: black;
     font-family: 'Quintessential', cursive;
     font-size: 1.2rem;
     outline: none;

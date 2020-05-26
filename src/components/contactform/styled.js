@@ -19,7 +19,7 @@ export const Field = styled.div`
     line-height: 1.5;
     outline: none;
     background-color: ${colours.lowOpacityWhite};
-    border: 0.15rem solid ${colours.darkGrey};
+    border: 0.2rem solid ${colours.darkGrey};
     border-radius: 0.5rem;
     border-color: ${({ length, valid }) =>
       length === 0
