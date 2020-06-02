@@ -64,6 +64,9 @@ export const Section = styled.section`
   background-color: ${props => props.bgcolor};
   scroll-snap-align: start;
   padding: 4rem 0;
+  @media (min-width: 1200px) {
+    padding: 4rem 5rem;
+  }
 `
 
 const btnAnimation = keyframes`

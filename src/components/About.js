@@ -1,15 +1,31 @@
 import React from 'react'
 // import Img from 'gatsby-image'
+import Logo from '../images/WYB-logo-web-plain.svg'
+import styled from 'styled-components'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-import {
-  colours,
-  DownButton,
-  TwoColumnContainer,
-  Cell,
-  // ImgContainer,
-} from './styled'
+import { colours, DownButton, TwoColumnContainer, Cell } from './styled'
+
+const ImageContainer = styled.div`
+  height: 100%;
+`
+const imageQuery = graphql`
+  query mikehanddrill {
+    mikehanddrill: file(relativePath: { eq: "mikehanddrill.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          originalName
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
 
 const About = ({ scrollToContact, className }) => {
+  const data = useStaticQuery(imageQuery)
+  console.log(data)
   return (
     <div className={className}>
       <TwoColumnContainer>
@@ -53,7 +69,15 @@ const About = ({ scrollToContact, className }) => {
             />
           </article>
         </Cell>
-        <Cell right></Cell>
+        <Cell right>
+          <ImageContainer>
+            <Img
+              fluid={data.mikehanddrill.childImageSharp.fluid}
+              title="Mike"
+              alt="Mike"
+            />
+          </ImageContainer>
+        </Cell>
       </TwoColumnContainer>
     </div>
   )
