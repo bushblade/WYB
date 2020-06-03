@@ -27,41 +27,33 @@ export const GlobalStyle = createGlobalStyle`
   h2 {
     font-size: 2rem;
     font-family: 'Quintessential', cursive;
+    border-bottom: 0.3rem solid ${colours.lowOpacityGreen};
   }
   p {
     font-size: 1.4rem;
   }
   a {
-    cursor: pointer;
     text-decoration: none;
+    cursor: pointer;
+    border-bottom: solid 0.2rem ${colours.lowOpacityGreen};
     font-weight: 500;
-    color: #404040;
-    box-shadow: inset 0 -0.175em ${colours.lowOpacityWhite},
-      inset 0 -0.25em ${colours.lightGrey};
-    background: linear-gradient(
-      0deg,
-      rgba(238, 238, 238, 0) 0%,
-      rgba(238, 238, 238, 0) 49%,
-      rgba(238, 238, 238, 0) 100%
-    );
+    color: ${colours.darkGrey};
+    transition: background 0.2s ease-in-out;
     :active,
     :visited {
-      color: #404040;
+      color: ${colours.darkGrey};
     }
     :hover {
-      background: linear-gradient(
-        0deg,
-        rgba(238, 238, 238, 0.7) 0%,
-        rgba(238, 238, 238, 0.2) 49%,
-        rgba(238, 238, 238, 0) 100%
-      );
+      background: ${colours.lowOpacityKahki};
+      color: black;
+      border-bottom: solid 0.2rem ${colours.green};
     }
   }
 `
 
 export const Section = styled.section`
   min-height: 100vh;
-  background-color: ${props => props.bgcolor};
+  background: ${props => props.bgcolor};
   scroll-snap-align: start;
   padding: 4rem 0;
   @media (min-width: 1200px) {

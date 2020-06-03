@@ -9,8 +9,7 @@ import About from '../components/About'
 import ContactForm from '../components/contactform'
 import Galleries from '../components/Galleries'
 
-const scrollTo = (ref) => () =>
-  ref.current.scrollIntoView({ behavior: 'smooth' })
+const scrollTo = ref => () => ref.current.scrollIntoView({ behavior: 'smooth' })
 
 const IndexPage = () => {
   const {
@@ -47,7 +46,10 @@ const IndexPage = () => {
         <Galleries />
       </Section>
 
-      <Section ref={contactRef} bgcolor={colours.lowOpacityLightGrey}>
+      <Section
+        ref={contactRef}
+        bgcolor={`radial-gradient(circle at bottom, ${colours.lowOpacityDarkGrey} 0%, ${colours.lowOpacityLightGrey} 100%)`}
+      >
         <ContactForm />
       </Section>
     </Layout>

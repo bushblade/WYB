@@ -56,8 +56,9 @@ const Galleries = () => {
         <h2>Members Galleries</h2>
         <p>
           The images in the galleries have been taken by our members while in
-          attendance of meets, they are usually updated after each meet so if
-          you're interested in what we get up to, please have a look.
+          attendance of meets,
+          <br /> they are usually updated after each meet so if you're
+          interested in what we get up to, please have a look.
         </p>
       </Heading>
       <TwoColumnContainer images>
