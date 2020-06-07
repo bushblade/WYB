@@ -63,7 +63,11 @@ export default styled(Menu)`
   @media (max-width: 700px) {
     width: 80vw;
   }
-  background-color: ${colours.darkGrey};
+  background: radial-gradient(
+    circle at bottom left,
+    ${colours.darkGrey} 0%,
+    ${colours.lightGrey} 100%
+  );
   @media (min-width: 1200px) {
     width: 100%;
     grid-area: menu;

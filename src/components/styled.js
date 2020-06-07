@@ -35,18 +35,17 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     cursor: pointer;
-    border-bottom: solid 0.2rem ${colours.lowOpacityGreen};
     font-weight: 500;
     color: ${colours.darkGrey};
+    background: linear-gradient(180deg,  transparent 81%, ${colours.lowOpacityGreen} 81%, ${colours.lowOpacityGreen} 90%, transparent 90%);
     transition: background 0.2s ease-in-out;
     :active,
     :visited {
       color: ${colours.darkGrey};
     }
     :hover {
-      background: ${colours.lowOpacityKahki};
+     background: linear-gradient(180deg,  ${colours.lowOpacityKahki} 81%, ${colours.green} 81%, ${colours.green} 90%, transparent 90%);
       color: black;
-      border-bottom: solid 0.2rem ${colours.green};
     }
   }
 `
