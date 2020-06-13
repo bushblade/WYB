@@ -27,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
   h2 {
     font-size: 2rem;
     font-family: 'Quintessential', cursive;
-    border-bottom: 0.3rem solid ${colours.lowOpacityGreen};
+    background: linear-gradient(180deg,  transparent 81%, ${colours.lowOpacityGreen} 81%, ${colours.lowOpacityGreen} 90%, transparent 90%);
   }
   p {
     font-size: 1.4rem;

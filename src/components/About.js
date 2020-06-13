@@ -1,39 +1,12 @@
 import React from 'react'
 // import Img from 'gatsby-image'
 // import Logo from '../images/WYB-logo-web-plain.svg'
-import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
 
-import { colours, DownButton, TwoColumnContainer, Cell } from './styled'
+import { TwoColumnContainer, Cell } from './styled'
+import ImageSwitcher from './ImageSwitcher'
 
-const ImageContainer = styled.div`
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  .gatsby-image-wrapper {
-    min-width: 300px;
-    width: 100%;
-    max-height: 86vh;
-  }
-`
-const imageQuery = graphql`
-  query mikehanddrill {
-    mikehanddrill: file(relativePath: { eq: "mikehanddrill.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          originalName
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
-
-const About = ({ scrollToContact, className }) => {
-  const data = useStaticQuery(imageQuery)
-  console.log(data)
+const About = ({ className }) => {
   return (
     <div className={className}>
       <TwoColumnContainer gap="3rem">
@@ -75,14 +48,7 @@ const About = ({ scrollToContact, className }) => {
           </article>
         </Cell>
         <Cell right>
-          <ImageContainer>
-            <Img
-              className="gatsby-image-wrapper"
-              fluid={data.mikehanddrill.childImageSharp.fluid}
-              title="Co-founder Mike Armstrong"
-              alt="Mike"
-            />
-          </ImageContainer>
+          <ImageSwitcher />
         </Cell>
       </TwoColumnContainer>
     </div>
