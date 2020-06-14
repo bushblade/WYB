@@ -57,16 +57,17 @@ const ImageSwitcher = props => {
     let interval = setInterval(
       () =>
         setIndex(state => {
+          console.log('setting index')
           const next = state + 1
           return next === images.length ? 0 : next
         }),
       4000
     )
-    return clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval)
+  }, [images.length])
 
   return (
-    <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+    <div style={{ position: 'relative' }}>
       {transitions.map(({ item, props, key }) => (
         <animated.div
           key={key}

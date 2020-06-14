@@ -115,6 +115,7 @@ export const Quote = styled.blockquote`
 `
 export const TwoColumnContainer = styled.div`
   display: grid;
+  position: relative;
   grid-gap: ${props => (props.gap ? props.gap : '0')};
   height: 100%;
   width: 100%;
@@ -130,6 +131,7 @@ export const TwoColumnContainer = styled.div`
   }
 `
 export const Cell = styled.div`
+  position: relative;
   background: ${props => (props.bgdark ? colours.lightGrey : '')};
   grid-area: ${props => (props.left ? 'left' : 'right')};
   // padding: ${props => (props.hastext ? '3rem' : '')};
