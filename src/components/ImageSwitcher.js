@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, Fragment } from 'react'
 import { useTransition, animated, config } from 'react-spring'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
@@ -41,7 +41,6 @@ const ImageSwitcher = props => {
   const images = useStaticQuery(query).allFile.edges.map(({ node }) => node)
 
   const [index, setIndex] = useState(0)
-  const [imageHeight, setImageHeight] = useState(100)
 
   const transitions = useTransition(
     images[index],
@@ -68,15 +67,12 @@ const ImageSwitcher = props => {
     return () => clearInterval(interval)
   }, [images.length])
 
-  useEffect(() => {
-    if (imageRef.current) {
-      console.log(imageRef.current.clientHeight)
-      setImageHeight(imageRef.current.clientHeight)
-    }
-  })
-
   return (
-    <div style={{ position: 'relative', height: imageHeight }}>
+    <Fragment>
+      <Img
+        fluid={images[0].childImageSharp.fluid}
+        style={{ visibility: 'hidden' }}
+      />
       {transitions.map(({ item, props, key }) => (
         <animated.div
           key={key}
@@ -94,7 +90,7 @@ const ImageSwitcher = props => {
           </ImageContainer>
         </animated.div>
       ))}
-    </div>
+    </Fragment>
   )
 }
 
