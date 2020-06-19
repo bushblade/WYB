@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle, keyframes } from 'styled-components'
 
-export const mobileBreakPoint = '1200px'
+export const mobileBreakPoint = '1400px'
 
 export const colours = {
   kahki: '#decd87',
