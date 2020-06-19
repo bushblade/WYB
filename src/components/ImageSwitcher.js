@@ -8,7 +8,11 @@ const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
+  max-height: 100vh;
   width: 100%;
+  overflow: hidden;
+  border: none;
+  border-radius: 0.5rem;
   justify-content: flex-end;
   .gatsby-image-wrapper {
     min-width: 300px;
@@ -69,10 +73,12 @@ const ImageSwitcher = props => {
 
   return (
     <Fragment>
-      <Img
-        fluid={images[0].childImageSharp.fluid}
-        style={{ visibility: 'hidden' }}
-      />
+      <ImageContainer>
+        <Img
+          fluid={images[0].childImageSharp.fluid}
+          style={{ visibility: 'hidden' }}
+        />
+      </ImageContainer>
       {transitions.map(({ item, props, key }) => (
         <animated.div
           key={key}

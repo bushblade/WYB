@@ -48,7 +48,7 @@ const IndexPage = () => {
 
       <Section
         ref={contactRef}
-        bgcolor={`radial-gradient(circle at bottom, ${colours.lowOpacityDarkGrey} 0%, ${colours.lowOpacityLightGrey} 100%)`}
+        bgcolor={`linear-gradient(45deg, ${colours.lowOpacityDarkGrey} 0%, ${colours.lowOpacityLightGrey} 100%)`}
       >
         <ContactForm />
       </Section>

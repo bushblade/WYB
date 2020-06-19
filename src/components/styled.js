@@ -7,8 +7,8 @@ export const colours = {
   lowOpacityGreen: 'rgba(102, 128, 0, 0.5)',
   darkGrey: '#404040',
   lowOpacityDarkGrey: 'rgba(64, 64, 64, 0.9)',
-  lightGrey: '#555555',
-  lowOpacityLightGrey: 'rgba(85, 85, 85, 0.9)',
+  lightGrey: '#5c5c5c',
+  lowOpacityLightGrey: 'rgba(92, 92, 92, 0.9)',
   lowOpacityWhite: 'rgba(239, 239, 239, 0.7)',
   white: 'rgba(239, 239, 239, 1)',
 }
@@ -25,6 +25,7 @@ export const GlobalStyle = createGlobalStyle`
   }   
 
   h2 {
+    white-space: nowrap;
     font-size: 2rem;
     font-family: 'Quintessential', cursive;
     background: linear-gradient(180deg,  transparent 81%, ${colours.lowOpacityGreen} 81%, ${colours.lowOpacityGreen} 90%, transparent 90%);
@@ -36,12 +37,12 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     cursor: pointer;
     font-weight: 500;
-    color: ${colours.darkGrey};
+    color: black;
     background: linear-gradient(180deg,  transparent 81%, ${colours.lowOpacityGreen} 81%, ${colours.lowOpacityGreen} 90%, transparent 90%);
     transition: background 0.2s ease-in-out;
     :active,
     :visited {
-      color: ${colours.darkGrey};
+      color: black;
     }
     :hover {
      background: linear-gradient(180deg,  ${colours.lowOpacityKahki} 81%, ${colours.green} 81%, ${colours.green} 90%, transparent 90%);

@@ -63,8 +63,8 @@ export default styled(Menu)`
   @media (max-width: 700px) {
     width: 80vw;
   }
-  background: radial-gradient(
-    circle at bottom left,
+  background: linear-gradient(
+    45deg,
     ${colours.darkGrey} 0%,
     ${colours.lightGrey} 100%
   );
