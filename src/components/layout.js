@@ -5,7 +5,7 @@ import BackgroundImage from 'gatsby-background-image'
 import styled from 'styled-components'
 import 'line-awesome/dist/line-awesome/css/line-awesome.css'
 
-import { GlobalStyle } from './styled'
+import { GlobalStyle, mobileBreakPoint } from './styled'
 import SideMenu from '../components/sideMenu'
 
 const Main = styled.main`
@@ -19,7 +19,7 @@ const Main = styled.main`
 const Container = styled.div`
   display: grid;
   grid-template-columns: 20rem 1fr;
-  @media (min-width: 1200px) {
+  @media (min-width: ${mobileBreakPoint}) {
     grid-template-areas: 'menu main';
   }
   grid-template-areas: 'main main';

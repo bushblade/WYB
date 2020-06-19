@@ -1,5 +1,7 @@
 import styled, { createGlobalStyle, keyframes } from 'styled-components'
 
+export const mobileBreakPoint = '1200px'
+
 export const colours = {
   kahki: '#decd87',
   lowOpacityKahki: 'rgba(222, 205, 135, 0.5)',
@@ -56,7 +58,7 @@ export const Section = styled.section`
   background: ${props => props.bgcolor};
   scroll-snap-align: start;
   padding: 4rem 0;
-  @media (min-width: 1200px) {
+  @media (min-width: ${mobileBreakPoint}) {
     padding: 4rem 5rem;
   }
 `

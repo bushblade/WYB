@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { colours } from '../styled'
+import { colours, mobileBreakPoint } from '../styled'
 
 const Menu = ({ indexlinks, closeMenu, className }) => {
   return (
@@ -68,7 +68,7 @@ export default styled(Menu)`
     ${colours.darkGrey} 0%,
     ${colours.lightGrey} 100%
   );
-  @media (min-width: 1200px) {
+  @media (min-width: ${mobileBreakPoint}) {
     width: 100%;
     grid-area: menu;
   }

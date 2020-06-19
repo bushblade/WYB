@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import { mobileBreakPoint } from '../../components/styled'
 
 const Button = styled.div`
   position: fixed;
@@ -37,7 +38,7 @@ const Button = styled.div`
   span:after {
     transform: translateY(0.7rem);
   }
-  ${(props) =>
+  ${props =>
     props.menuOpen &&
     css`
       transform: rotate(45deg);
@@ -53,7 +54,7 @@ const Button = styled.div`
         background-color: whitesmoke;
       }
     `}
-  @media (min-width: 1200px) {
+  @media (min-width: ${mobileBreakPoint}) {
     display: none;
   }
 `
