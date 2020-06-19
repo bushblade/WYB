@@ -7,10 +7,10 @@ export const colours = {
   lowOpacityKahki: 'rgba(222, 205, 135, 0.5)',
   green: '#668000',
   lowOpacityGreen: 'rgba(102, 128, 0, 0.5)',
-  darkGrey: '#404040',
-  lowOpacityDarkGrey: 'rgba(64, 64, 64, 0.9)',
-  lightGrey: '#5c5c5c',
-  lowOpacityLightGrey: 'rgba(92, 92, 92, 0.9)',
+  darkGrey: '#363636',
+  lowOpacityDarkGrey: 'rgba(54, 54, 54, 0.9)',
+  lightGrey: '#666666',
+  lowOpacityLightGrey: 'rgba(102, 102, 102, 0.9)',
   lowOpacityWhite: 'rgba(239, 239, 239, 0.7)',
   white: 'rgba(239, 239, 239, 1)',
 }
@@ -27,13 +27,19 @@ export const GlobalStyle = createGlobalStyle`
   }   
 
   h2 {
+    font-size: 1.8rem;
     white-space: nowrap;
-    font-size: 2rem;
     font-family: 'Quintessential', cursive;
     background: linear-gradient(180deg,  transparent 81%, ${colours.lowOpacityGreen} 81%, ${colours.lowOpacityGreen} 90%, transparent 90%);
+    @media (min-width: 700px) {
+      font-size: 2rem;
+    }
   }
   p {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    @media (min-width: 700px) {
+      font-size: 1.4rem;
+    }
   }
   a {
     text-decoration: none;
@@ -57,7 +63,10 @@ export const Section = styled.section`
   min-height: 100vh;
   background: ${props => props.bgcolor};
   scroll-snap-align: start;
-  padding: 4rem 0;
+  padding-top: 2rem;
+  @media (min-width: 1000px) {
+    padding-top: 3rem;
+  }
   @media (min-width: ${mobileBreakPoint}) {
     padding: 4rem 5rem;
   }
@@ -122,19 +131,19 @@ export const TwoColumnContainer = styled.div`
   grid-gap: ${props => (props.gap ? props.gap : '0')};
   height: 100%;
   width: 100%;
-  padding: ${props => (props.images ? '0 2rem' : '0 3rem')};
+  padding: 0 0.5rem;
   grid-template-columns: 1fr;
   grid-template-areas: ${props =>
     props.reverseOnMobile
       ? `'right right' 'left left'`
       : `'left left' 'right right'`};
   @media (min-width: 1000px) {
+    padding: ${props => (props.images ? '0 2rem' : '0 3rem')};
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 'left right';
   }
 `
 export const Cell = styled.div`
-  position: relative;
   background: ${props => (props.bgdark ? colours.lightGrey : '')};
   grid-area: ${props => (props.left ? 'left' : 'right')};
   // padding: ${props => (props.hastext ? '3rem' : '')};

@@ -2,6 +2,7 @@ import React from 'react'
 // import Img from 'gatsby-image'
 // import Logo from '../images/WYB-logo-web-plain.svg'
 // import Img from 'gatsby-image'
+import styled from 'styled-components'
 
 import { TwoColumnContainer, Cell } from './styled'
 import ImageSwitcher from './ImageSwitcher'
@@ -12,7 +13,7 @@ const About = ({ className }) => {
       <TwoColumnContainer gap="3rem">
         <Cell left>
           <article>
-            <h2>Established in June of 2012</h2>
+            <h2>Established June 2012</h2>
             <p>
               The West Yorkshire Bushcraft group was created in 2012 to bring
               together those interested in Bushcraft and Bushcraft related
@@ -55,4 +56,8 @@ const About = ({ className }) => {
   )
 }
 
-export default About
+export default styled(About)`
+  display: flex;
+  align-items: center;
+  height: 100%;
+`

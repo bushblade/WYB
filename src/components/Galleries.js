@@ -45,7 +45,10 @@ const galleriesQuery = graphql`
 const Heading = styled.div`
   width: 100%;
   height: 100%;
-  padding: 3rem;
+  padding: 0 0.5rem 1rem 0.5rem;
+  @media (min-width: 1000px) {
+    padding: 0 3rem 1rem 3rem;
+  }
 `
 
 const Galleries = () => {

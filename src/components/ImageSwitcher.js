@@ -5,15 +5,12 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 const ImageContainer = styled.div`
-  display: flex;
-  align-items: center;
+  position: relative;
   height: 100%;
-  max-height: 100vh;
   width: 100%;
   overflow: hidden;
   border: none;
   border-radius: 0.5rem;
-  justify-content: flex-end;
   .gatsby-image-wrapper {
     min-width: 300px;
     width: 100%;
@@ -72,7 +69,7 @@ const ImageSwitcher = props => {
   }, [images.length])
 
   return (
-    <Fragment>
+    <div style={{ position: 'relative' }}>
       <ImageContainer>
         <Img
           fluid={images[0].childImageSharp.fluid}
@@ -88,7 +85,6 @@ const ImageSwitcher = props => {
             top: 0,
             left: 0,
             width: '100%',
-            height: '100%',
           }}
         >
           <ImageContainer ref={imageRef}>
@@ -96,7 +92,7 @@ const ImageSwitcher = props => {
           </ImageContainer>
         </animated.div>
       ))}
-    </Fragment>
+    </div>
   )
 }
 
