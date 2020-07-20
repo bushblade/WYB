@@ -72,6 +72,22 @@ export const Section = styled.section`
   }
 `
 
+export const FooterSection = styled.footer`
+  position: relative;
+  min-height: 100vh;
+  background: ${props => props.bgcolor};
+  scroll-snap-align: start;
+`
+export const ContactContainer = styled.div`
+  padding-top: 2rem;
+  @media (min-width: 1000px) {
+    padding-top: 3rem;
+  }
+  @media (min-width: ${mobileBreakPoint}) {
+    padding: 4rem 5rem;
+  }
+`
+
 const btnAnimation = keyframes`
   0% {
     transform: translate(0, 0) rotate(45deg);

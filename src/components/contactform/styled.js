@@ -51,7 +51,8 @@ export const Field = styled.div`
 export const Form = styled.form`
   max-width: 800px;
   margin: auto;
-  padding: 3rem 1.5rem;
+  width: 100%;
+  padding: 1.5rem;
 `
 
 export const BtnField = styled.div`
