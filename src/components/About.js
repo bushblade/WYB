@@ -11,7 +11,7 @@ const About = ({ className }) => {
   return (
     <div className={className}>
       <TwoColumnContainer gap="3rem">
-        <Cell left>
+        <Cell left withPadding>
           <article>
             <h2>Established June 2012</h2>
             <p>
@@ -48,7 +48,7 @@ const About = ({ className }) => {
             </p>
           </article>
         </Cell>
-        <Cell right>
+        <Cell right withPadding>
           <ImageSwitcher />
         </Cell>
       </TwoColumnContainer>

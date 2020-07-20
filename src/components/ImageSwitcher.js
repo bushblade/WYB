@@ -1,19 +1,23 @@
-import React, { useState, useEffect, useRef, Fragment } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useTransition, animated, config } from 'react-spring'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
+import { mobileBreakPoint } from '../components/styled'
 
 const ImageContainer = styled.div`
   position: relative;
+  margin: auto;
   height: 100%;
-  width: 100%;
   overflow: hidden;
   border: none;
   border-radius: 0.5rem;
   .gatsby-image-wrapper {
     min-width: 300px;
     width: 100%;
+  }
+  @media (min-width: ${mobileBreakPoint}) {
+    width: 90%;
   }
 `
 const query = graphql`

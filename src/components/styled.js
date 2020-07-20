@@ -146,7 +146,7 @@ export const TwoColumnContainer = styled.div`
 export const Cell = styled.div`
   background: ${props => (props.bgdark ? colours.lightGrey : '')};
   grid-area: ${props => (props.left ? 'left' : 'right')};
-  // padding: ${props => (props.hastext ? '3rem' : '')};
+  padding: ${props => (props.withPadding ? '0 1rem' : '')};
   display: flex;
   flex-direction: column;
   justify-content: space-around;
