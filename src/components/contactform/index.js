@@ -78,7 +78,7 @@ const ContactForm = () => {
       name="contact"
       method="post"
     >
-      <input type="hidden" name="Form-name" value="contact" disabled={sent} />
+      <input type="hidden" name="Contact" value="contact" disabled={sent} />
       <Field valid={name.valid} length={name.text.length}>
         <label htmlFor="name">Your Name: </label>
         <input
