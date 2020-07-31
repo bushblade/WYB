@@ -35,5 +35,7 @@ export default styled(Poem)`
   width: 100%;
   font-size: 1.5rem;
   padding: 1.5rem;
-  margin-bottom: 3rem;
+  @media (max-width: 1000px) {
+    margin: 3rem;
+  }
 `
