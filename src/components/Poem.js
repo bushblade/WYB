@@ -35,10 +35,5 @@ export default styled(Poem)`
   width: 100%;
   font-size: 1.5rem;
   padding: 1.5rem;
-  blockquote {
-    margin: 1rem 0;
-    text-align: center;
-    white-space: nowrap;
-    line-height: 2.5rem;
-  }
+  margin-bottom: 3rem;
 `

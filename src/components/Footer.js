@@ -23,4 +23,5 @@ export default styled(Footer)`
   position: absolute;
   bottom: 0;
   height: 2.5rem;
+  text-align: center;
 `
