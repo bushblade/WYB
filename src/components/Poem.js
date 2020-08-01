@@ -26,7 +26,9 @@ const Poem = ({ className }) => {
         <br />
         nature beats within them.
       </p>
-      <p>6.6.19 NB</p>
+      <p>
+        6.6.19 NB <small> - member of WYB</small>
+      </p>
     </div>
   )
 }
@@ -35,6 +37,11 @@ export default styled(Poem)`
   width: 100%;
   font-size: 1.5rem;
   padding: 1.5rem;
+  small {
+    font-size: 1rem;
+    font-weight: 200;
+    font-style: italic;
+  }
   @media (max-width: 1000px) {
     margin-bottom: 3rem;
   }
