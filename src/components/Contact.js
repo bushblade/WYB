@@ -3,12 +3,14 @@ import { TwoColumnContainer, Cell } from '../components/styled'
 import ContactForm from '../components/contactform'
 import styled from 'styled-components'
 import Poem from '../components/Poem'
+import useIsMobile from '../hooks/useIsMobile'
 
 const Contact = ({ className }) => {
+  const mobile = useIsMobile(800)
   return (
     <div className={className}>
       <header>
-        <h2>Contact West Yorkshire Bushcraft</h2>
+        <h2>Contact {mobile ? 'WYB' : 'West Yorkshire Bushcraft'}</h2>
         <p>
           For questions, comments and membership enquiries please get in
           touch...

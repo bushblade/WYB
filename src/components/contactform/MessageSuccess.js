@@ -11,7 +11,7 @@ const Message = styled.div`
   align-items: center;
   justify-content: center;
   .main {
-    margin: 3rem;
+    // margin: 3rem;
     padding: 1rem 1rem 0 1rem;
     border-radius: 0.5rem;
     border: 0.2rem solid ${colours.darkGrey};
@@ -20,6 +20,7 @@ const Message = styled.div`
     padding: 3rem;
     text-align: center;
     height: 100%;
+    max-width: 90vw;
 
     h2 {
       font-size: 2rem;
@@ -39,8 +40,7 @@ const MessageSuccess = () => {
       <Message>
         <div className="main">
           <h2>
-            Your message has been sent{' '}
-            <i className="las la-lg la-envelope-open-text"></i>
+            Message sent! <i className="las la-lg la-envelope-open-text"></i>
           </h2>
           <p>
             Thanks for contacting
