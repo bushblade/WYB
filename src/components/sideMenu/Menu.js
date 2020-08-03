@@ -103,6 +103,9 @@ export default styled(Menu)`
       color: ${colours.white} !important;
       font-family: 'Lora', serif;
       box-shadow: none;
+      &:focus {
+        outline: none;
+      }
     }
   }
 `
