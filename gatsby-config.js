@@ -27,8 +27,8 @@ module.exports = {
         name: `West Yorkshire bushcraft`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#decd87`,
+        theme_color: `#decd87`,
         display: `minimal-ui`,
         icon: `src/images/icon.svg`, // This path is relative to the root of the site.
       },
