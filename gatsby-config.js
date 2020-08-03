@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `West Yorkshire Bushcraft`,
     description: `The greatest Bushcraft Community in West Yorkshire, established 2012.`,
-    author: `@gatsbyjs`,
+    author: `@bushblade`,
   },
   plugins: [
     {
@@ -25,7 +25,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `West Yorkshire bushcraft`,
-        short_name: `starter`,
+        short_name: `WYB`,
         start_url: `/`,
         background_color: `#decd87`,
         theme_color: `#decd87`,
