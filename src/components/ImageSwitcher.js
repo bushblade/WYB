@@ -30,8 +30,8 @@ const query = graphql`
               width
               height
             }
-            fluid {
-              ...GatsbyImageSharpFluid
+            fluid(maxWidth: 800, quality: 75) {
+              ...GatsbyImageSharpFluid_withWebp
               originalName
               originalImg
             }
@@ -42,14 +42,14 @@ const query = graphql`
   }
 `
 
-const ImageSwitcher = props => {
+const ImageSwitcher = () => {
   const images = useStaticQuery(query).allFile.edges.map(({ node }) => node)
 
   const [index, setIndex] = useState(0)
 
   const transitions = useTransition(
     images[index],
-    image => image.childImageSharp.fluid.originalName,
+    (image) => image.childImageSharp.fluid.originalName,
     {
       from: { opacity: 0 },
       enter: { opacity: 1 },
@@ -63,7 +63,7 @@ const ImageSwitcher = props => {
   useEffect(() => {
     let interval = setInterval(
       () =>
-        setIndex(state => {
+        setIndex((state) => {
           const next = state + 1
           return next === images.length ? 0 : next
         }),
