@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react'
 
+const isMobile = (width) => {
+  if (typeof window !== 'undefined') return window.innerWidth < width
+}
+
 const useIsMobile = (width = 1400) => {
-  const isMobile = () => {
-    if (typeof window !== 'undefined') return window.innerWidth < width
-  }
-  const [mobile, setMobile] = useState(isMobile())
+  const [mobile, setMobile] = useState(isMobile(width))
 
   useEffect(() => {
-    const checkWindowSize = () => setMobile(isMobile())
+    const checkWindowSize = () => setMobile(isMobile(width))
     if (window) {
       checkWindowSize()
       window.addEventListener('resize', checkWindowSize)
